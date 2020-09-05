@@ -4,6 +4,8 @@ import Login from './Login/Login.js';
 import IniciarSesion from './IniciarSesion/IniciarSesion.js';
 import HomeProveedor from './HomeProveedor/HomeProveedor.js'; 
 import HomeInterno from './HomeInterno/HomeInterno.js'; 
+import Uploadphoto from './uploadphoto/Uploadphoto.js'
+import infoUp from './infoupload/infoupload.js';
 const Routes = () => {
 
     return (
@@ -19,6 +21,12 @@ const Routes = () => {
             </Route>
             <Route exact path="/">
                 <Login />
+            </Route>
+            <Route exact path="/">
+                <Uploadphoto/>
+            </Route>
+            <Route exact path="/">
+                <infoUp/>
             </Route>
         </Switch>
     )
