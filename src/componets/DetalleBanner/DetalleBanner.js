@@ -5,7 +5,7 @@ import Logo from '../assets/walmart.png';
 const { Content } = Layout
 
 const DetalleBanner = ({detalles, detalle, setDetalle}) =>{
-    const {frase1, frase2, frase3, frase4, frase5, frase6, frase7, titulo} = detalles
+    const {frase1, frase2, frase3, frase4, frase5, frase6, frase7, imgUrl, titulo} = detalles
     return(
         <Layout >
         <Content >
@@ -38,7 +38,7 @@ const DetalleBanner = ({detalles, detalle, setDetalle}) =>{
             
         </Col>
         <Col span={6} pull={18}>
-            <img src={Logo} alt="logo" className="imgdetalle"/>
+            <img src={imgUrl} alt="logo" className="imgdetalle"/>
         </Col>
         </Row>
     </Content>

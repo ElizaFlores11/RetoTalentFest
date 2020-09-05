@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 import Detalles from '../DetalleBanner/Detalles'
+import InfoCampaña from '../InfoCampaña/InfoCampaña'
 import { Row, Col, Layout } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 
