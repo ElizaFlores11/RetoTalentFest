@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Layout } from 'antd';
 const { Content } = Layout
 
-const DetalleBanner = () =>{
+const InfoCampaña = () =>{
     return(
         <Layout >
         <Content >
@@ -20,4 +20,4 @@ const DetalleBanner = () =>{
     </Layout>
     )
 } 
-export default DetalleBanner
+export default InfoCampaña
