@@ -14,3 +14,5 @@ const CampañaLista = ()=> {
         </div>
     )
 }
+
+export default CampañaLista
