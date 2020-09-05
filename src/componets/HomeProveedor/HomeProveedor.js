@@ -1,12 +1,12 @@
 import React from 'react';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 //<MenuProveedor />
-import DetalleBanner from '../DetalleBanner/DetalleBanner'
+import InfoCampaña from '../InfoCampaña/InfoCampaña'
 import { Row, Col, Layout } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const HomeProveedor = () =>{
     return(
-        <Layout>
+    <Layout>
       <Header>
       
       </Header>
@@ -15,7 +15,7 @@ const HomeProveedor = () =>{
       <Row>
         <Col span={18} push={6} >
         <br />
-        <DetalleBanner />
+        <InfoCampaña />
      
         </Col>
         <Col span={6} pull={18}>
