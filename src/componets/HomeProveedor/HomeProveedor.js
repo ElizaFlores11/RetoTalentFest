@@ -2,6 +2,7 @@ import React from 'react';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 //<MenuProveedor />
 import InfoCampaña from '../InfoCampaña/InfoCampaña'
+import InfoIussues from '../InfoIssues/InfoIssues'
 import { Row, Col, Layout } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const HomeProveedor = () =>{
@@ -16,7 +17,8 @@ const HomeProveedor = () =>{
         <Col span={18} push={6} >
         <br />
         <InfoCampaña />
-     
+        <b/>
+        <InfoIussues />
         </Col>
         <Col span={6} pull={18}>
            
