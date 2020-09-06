@@ -1,13 +1,13 @@
 import React from 'react';
-import Boton from '../Boton/Boton'
-import template from '../assets/duplicado.jpg'
+import template from '../assets/duplicado.png'
+import '../../styles/homeProveedor.scss'
 
 const TiposdeCampaña = ()=> {
     return(
         <div>
             <img src={template}></img>
-            <Boton>Ver detalles</Boton>
-            <Boton>Ver detalles</Boton>
+            <button className='yellow-btn'>Ver detalles</button>
+            <button className='yellow-btn'>Ver detalles</button>
         </div>
     )
 }

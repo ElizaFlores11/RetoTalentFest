@@ -12,14 +12,12 @@ const Logo = ({small = false, big = false})=> {
     let classNam = 'logo-small'
 
     if(small){
-        src = src
         style = {
             width: '175px',
             height: 'auto'
         }
     }
     else{
-        src = src
         alt= 'big'
         classNam= 'logo-big'
     }

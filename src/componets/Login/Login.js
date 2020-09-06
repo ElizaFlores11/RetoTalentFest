@@ -14,6 +14,7 @@ const Login = () =>{
           <Row>  
             <Col className="stylerow" xs={{ span: 12, offset: 1 }} lg={{ span: 6, offset: 2 }}>
               <Logo big />
+              <h3>Inicio de Sesión</h3>
             <LoginFirebase />
             </Col>        
           </Row>
