@@ -30,7 +30,7 @@ const Uploadphoto = () =>{
           fileList: [],
           uploading: false,
         });
-        message.success('upload successfully.');
+        message.success('imagen correcta');
       },
       error: () => {
         setState({

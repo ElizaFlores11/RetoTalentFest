@@ -2,6 +2,7 @@ import React from 'react';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 import Pasos from '../Pasos/Pasos'
 import TiposCampaña from '../TiposCampaña/TiposCampaña'
+
 import { Row, Col, Layout } from 'antd';
 const { Header, Content } = Layout;
 
