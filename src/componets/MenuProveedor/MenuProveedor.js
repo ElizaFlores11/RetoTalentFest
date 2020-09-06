@@ -11,7 +11,7 @@ import {
 const MenuProveedor = () =>{
     
     return (
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+          <Menu mode="horizontal" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<UserOutlined />}>
               nav 1
             </Menu.Item>

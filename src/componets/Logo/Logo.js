@@ -1,5 +1,6 @@
 import React  from 'react';
 import logo from '../assets/walmart.png'
+import logoBlanco from '../assets/walmartBlanco.png'
 
 const Logo = ({small = false, big = false})=> {
 
@@ -12,8 +13,9 @@ const Logo = ({small = false, big = false})=> {
     let classNam = 'logo-small'
 
     if(small){
+        src = logoBlanco
         style = {
-            width: '175px',
+            width: '180px',
             height: 'auto'
         }
     }
