@@ -1,34 +1,81 @@
-import { Upload, message, Button } from 'antd';
+import React, {useState} from 'react';
+import { Upload, Button, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import React from 'react';
+import reqwest from 'reqwest';
 
 const Uploadphoto = () =>{
-  
+  const [state, setState] =useState({
+    fileList: [],
+    uploading: false,
+  });
 
-const props = {
-  name: 'file',
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  headers: {
-    authorization: 'authorization-text',
-  },
-  onChange(info) {
-    if (info.file.status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully`);
-    } else if (info.file.status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-};
+  const handleUpload = () => {
+    const { fileList } = state;
+    const formData = new FormData();
+    fileList.forEach(file => {
+      formData.append('files[]', file);
+    });
 
+    setState({
+      uploading: true,
+    });
+    // You can use any AJAX library you like
+    reqwest({
+      url: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+      method: 'post',
+      processData: false,
+      data: formData,
+      success: () => {
+        setState({
+          fileList: [],
+          uploading: false,
+        });
+        message.success('upload successfully.');
+      },
+      error: () => {
+        setState({
+          uploading: false,
+        });
+        message.error('upload failed.');
+      },
+    });
+  };
+  const { uploading, fileList } = state;
+    const props = {
+      onRemove: file => {
+        setState(state => {
+          const index = state.fileList.indexOf(file);
+          const newFileList = state.fileList.slice();
+          newFileList.splice(index, 1);
+          return {
+            fileList: newFileList,
+          };
+        });
+      },
+      beforeUpload: file => {
+        setState(state => ({
+          fileList: [...state.fileList, file],
+        }));
+        return false;
+      },
+      fileList,
+    };
 return(
-   
-      <Upload {...props}>
-        <Button icon={<UploadOutlined />}>Sube tu foto</Button>
-      </Upload>
-);
+    <div>
+        <Upload {...props}>
+          <Button icon={<UploadOutlined />}>Select File</Button>
+        </Upload>
+        <Button
+          type="primary"
+          onClick={handleUpload}
+          disabled={fileList.length === 0}
+          loading={uploading}
+          style={{ marginTop: 16 }}
+        >
+          {uploading ? 'Uploading' : 'Start Upload'}
+        </Button>
+    </div>
+)
    }
 
 
