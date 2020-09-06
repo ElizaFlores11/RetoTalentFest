@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 //import Detalles from '../DetalleBanner/Detalles'
+import Calendario from '../Calendario/Calendario'
 import Uploadphoto from '../uploadphoto/Uploadphoto'
 import { Row, Col, Layout } from 'antd';
 import Dropdowndept from '../Dropdowndept/Dropdowndept'
@@ -17,6 +18,7 @@ const HomeProveedor = () =>{
         <br />
         <Dropdowndept />
         <Uploadphoto />
+        <Calendario />
         <b/>
         </Col>
         <Col span={6} pull={18}>
