@@ -1,8 +1,9 @@
 import React from 'react';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 //import Detalles from '../DetalleBanner/Detalles'
-import Notificacion from '../Notificacion/Notificacion'
+import Uploadphoto from '../uploadphoto/Uploadphoto'
 import { Row, Col, Layout } from 'antd';
+import Dropdowndept from '../Dropdowndept/Dropdowndept'
 const { Header, Content, Footer, Sider } = Layout;
 
 const HomeProveedor = () =>{
@@ -14,7 +15,8 @@ const HomeProveedor = () =>{
       <Row>
         <Col span={18} push={6} >
         <br />
-        <Notificacion />
+        <Dropdowndept />
+        <Uploadphoto />
         <b/>
         </Col>
         <Col span={6} pull={18}>
