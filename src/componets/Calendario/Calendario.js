@@ -18,7 +18,14 @@ const Calendario = () => {
   };
   const { from, to } = getInitialState;
   const modifiers = { start: from, end: to };
-
+/* `Selected from ${from.toLocaleDateString()} to
+                ${to.toLocaleDateString()}`}{" "}*
+        {from && to && (
+          <button className="link" onClick={handleResetClick}>
+            Reset
+          </button>
+        )}*/
+                
   return (
     <div className="RangeExample">
         <h3>Selecciona la fecha de publicación:</h3>
@@ -27,13 +34,13 @@ const Calendario = () => {
         {from && !to && "Please select the last day."}
         {from &&
           to &&
-          `Selected from ${from.toLocaleDateString()} to
-                ${to.toLocaleDateString()}`}{" "}
-        {from && to && (
-          <button className="link" onClick={handleResetClick}>
-            Reset
-          </button>
-        )}
+           <input value={from.toLocaleDateString()} />  
+         }
+        {from &&
+          to &&
+           <input value={to.toLocaleDateString()} />
+        }
+         
       </p>
       <DayPicker
         className="Selectable"
