@@ -5,6 +5,8 @@ import 'antd/dist/antd.css';
 const datosCuenta = () =>{
     return(
         <div>
+        <ul>Para finalizar el proceso de contratación, ingresa tus datos de cuenta para realizar el pago correspondiente</ul>
+        <h3>DATOS DE CUENTA</h3>
         <Menu>
         <Menu.ItemGroup title="Banco">
       <Menu.Item>Banorte</Menu.Item>
