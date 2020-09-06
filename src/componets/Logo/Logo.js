@@ -9,22 +9,24 @@ const Logo = ({small = false, big = false})=> {
         width: '100%',
         height: '100%'
     }
+    let classNam = 'logo-small'
 
     if(small){
         src = src
+        style = {
+            width: '175px',
+            height: 'auto'
+        }
     }
     else{
         src = src
-        style = {
-            width: '50%',
-            height: '50%'
-        }
         alt= 'big'
+        classNam= 'logo-big'
     }
 
     return(
-        <div>
-            <img src={src} style={style} alt={alt} ></img>
+        <div className='logo-container'>
+            <img src={src} style={style} alt={alt} className={classNam}></img>
         </div>
     )
 }
