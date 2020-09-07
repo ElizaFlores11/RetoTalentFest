@@ -7,8 +7,10 @@ import HomeInterno from './HomeInterno/HomeInterno.js';
 import Uploadphoto from './uploadphoto/Uploadphoto.js';
 import Detalles from './DetalleBanner/Detalles'
 import infoUp from './infoupload/infoupload.js';
-const Routes = () => {
+import SubirArchivos from './SubirArchivos/SubirArchivos.js';
 
+const Routes = () => {
+    
     return (
         <Switch>
             <Route exact path="/HomeInterno">
@@ -31,6 +33,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/DetallesBanners">
                 <Detalles/>
+            </Route>
+            <Route exact path="/SubirArchivos">
+                <SubirArchivos />
             </Route>
         </Switch>
     )
