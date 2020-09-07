@@ -8,6 +8,7 @@ import Uploadphoto from './uploadphoto/Uploadphoto.js';
 import Detalles from './DetalleBanner/Detalles'
 import infoUp from './infoupload/infoupload.js';
 import DetalleBanner from './DetalleBanner/DetalleBanner.js';
+import SubirArchivos from './SubirArchivos/SubirArchivos.js'; 
 const Routes = ({tipo}) => {
 
     
