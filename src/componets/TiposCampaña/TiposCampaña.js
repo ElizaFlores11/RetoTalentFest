@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom'
 
 import template from '../assets/duplicado.png'
 import '../../styles/homeProveedor.scss'
 
 const TiposdeCampaña = ()=> {
-    const [tipo, setTipo] = useState('superBan')
     let history = useHistory()
 
     function handleClick() {

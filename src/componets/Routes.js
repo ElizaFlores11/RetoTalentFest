@@ -5,10 +5,14 @@ import IniciarSesion from './IniciarSesion/IniciarSesion.js';
 import HomeProveedor from './HomeProveedor/HomeProveedor.js'; 
 import HomeInterno from './HomeInterno/HomeInterno.js'; 
 import Uploadphoto from './uploadphoto/Uploadphoto.js';
-import Detalles from './DetalleBanner/Detalles'
 import infoUp from './infoupload/infoupload.js';
 import DetalleBanner from './DetalleBanner/DetalleBanner.js';
-const Routes = ({tipo}) => {
+import SubirArchivos from './SubirArchivos/SubirArchivos.js';
+import Comprando from './Comprando/Comprando'
+import Aprobacion from './Aprobacion/Aprobacion'
+import CampañaLista from './CampañaLista/CampañaLista'
+
+const Routes = () => {
     
     return (
         <Switch>
@@ -35,6 +39,18 @@ const Routes = ({tipo}) => {
             </Route>
             <Route exact path="/DetallesBanners/banner">
                 <DetalleBanner ban/>
+            </Route>
+            <Route exact path="/SubirArchivos">
+                <SubirArchivos />
+            </Route>
+            <Route exact path="/Comprando">
+                <Comprando />
+            </Route>
+            <Route exact path="/Aprobacion">
+                <Aprobacion />
+            </Route>
+            <Route exact path="/Completado">
+                <CampañaLista />
             </Route>
         </Switch>
     )
