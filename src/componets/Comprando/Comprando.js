@@ -20,6 +20,7 @@ const Comprando= ()=> {
       });
 
     const updateDates = ()=>{}
+    
 
     return(
         <>
