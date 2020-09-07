@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Switch, Route } from "react-router-dom";
 import Login from './Login/Login.js'; 
 import IniciarSesion from './IniciarSesion/IniciarSesion.js';
@@ -7,8 +7,9 @@ import HomeInterno from './HomeInterno/HomeInterno.js';
 import Uploadphoto from './uploadphoto/Uploadphoto.js';
 import Detalles from './DetalleBanner/Detalles'
 import infoUp from './infoupload/infoupload.js';
-const Routes = () => {
-
+import DetalleBanner from './DetalleBanner/DetalleBanner.js';
+const Routes = ({tipo}) => {
+    
     return (
         <Switch>
             <Route exact path="/HomeInterno">
@@ -29,8 +30,11 @@ const Routes = () => {
             <Route exact path="/">
                 <infoUp/>
             </Route>
-            <Route exact path="/DetallesBanners">
-                <Detalles/>
+            <Route exact path="/DetallesBanners/superBanner">
+                <DetalleBanner sBanner/>
+            </Route>
+            <Route exact path="/DetallesBanners/banner">
+                <DetalleBanner ban/>
             </Route>
         </Switch>
     )
