@@ -1,21 +1,23 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import { Select } from 'antd';
-
-const { Option } = Select;
-
-const onChange = (value)=> {
-  console.log(`selected ${value}`);
-}
+  const { Option } = Select;
+  const onChange = (value)=> {
+    console.log(`selected ${value}`);
+  }
 
 
 const Dropmenu = ()=>{
+  const formValidation = () =>{
+    console.log("Hola"); 
+}
   return (
+    <Fragment >
     <Select
     showSearch
     style={{ width: 200 }}
     placeholder="Select a person"
     optionFilterProp="children"
-    onChange={onChange}
+    //onChange={onChange}
     filterOption={(input, option) =>
       option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
     }
@@ -31,26 +33,15 @@ const Dropmenu = ()=>{
     <Option value="Películas, libros & artículos de temporada">Películas, libros & artículos de temporada</Option>
     <Option value="Vinos, licores & despensa">Vinos, licores & despensa</Option>
   </Select>
+
+  <button
+    type="button"
+    className="btn-send-kitchen"
+    onClick={formValidation}
+  >Guardar Datos</button>
+</Fragment>
   )
 }
 ;
 
 export default Dropmenu;
-/*<Menu>
-    <Menu.ItemGroup title="Departamento">
-      <Menu.Item>Electrodomésticos & línea blanca</Menu.Item>
-      <Menu.Item>Celulares & cámaras</Menu.Item>
-      <Menu.Item>Pantallas, audio e instrumentos musicales</Menu.Item>
-      <Menu.Item>Computadoras, papelería & oficina</Menu.Item>
-      <Menu.Item>Videojuegos y juguetes</Menu.Item>
-      <Menu.Item>Deportes</Menu.Item>
-      <Menu.Item>Autos & motos</Menu.Item>
-      <Menu.Item>Colchones, muebles & jardín</Menu.Item>
-      <Menu.Item>Hogar, casa inteligente & ferretería</Menu.Item>
-      <Menu.Item>Moda, belleza & salud</Menu.Item>
-      <Menu.Item>Bebés</Menu.Item>
-      <Menu.Item>Mascotas</Menu.Item>
-      <Menu.Item>Películas, libros & artículos de temporada</Menu.Item>
-      <Menu.Item>Vinos, licores & despensa</Menu.Item>
-    </Menu.ItemGroup>
-    </Menu>*/
