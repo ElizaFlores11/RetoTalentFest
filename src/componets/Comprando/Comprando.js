@@ -19,8 +19,8 @@ const Comprando= ()=> {
         to: undefined
       });
 
-    const updateDates = ()=>{}
-    
+  
+
 
     return(
         <>

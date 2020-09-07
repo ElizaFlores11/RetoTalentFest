@@ -1,82 +1,80 @@
 import React, {useState} from 'react';
-import { Upload, Button, message } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import reqwest from 'reqwest';
-
+import {firebase, db} from '../../firebase/configFirebase'; 
+import FileUploader from "react-firebase-file-uploader";
+import VerImagen from "../VerImagen/VerImagen"
+require("firebase/storage");
 const SubirArchivos = () =>{
-  const [state, setState] =useState({
-    fileList: [],
-    uploading: false,
-  });
-
-  const handleUpload = () => {
-    const { fileList } = state;
-    const formData = new FormData();
-    fileList.forEach(file => {
-      formData.append('files[]', file);
-    });
-
-    setState({
-      uploading: true,
-    });
-    // You can use any AJAX library you like
-    reqwest({
-      url: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-      method: 'post',
-      processData: false,
-      data: formData,
-      success: () => {
+    const [state, setState] = useState({
+        filenames: [],
+        downloadURLs: [],
+        isUploading: false,
+        uploadProgress: 0
+      });
+    
+      const  handleUploadStart = () =>
         setState({
-          fileList: [],
-          uploading: false,
+          isUploading: true,
+          uploadProgress: 0
         });
-        message.success('imagen correcta');
-      },
-      error: () => {
+    
+      const handleProgress = progress =>
         setState({
-          uploading: false,
+          uploadProgress: progress
         });
-        message.error('upload failed.');
-      },
-    });
-  };
-  const { uploading, fileList } = state;
-    const props = {
-      onRemove: file => {
-        setState(state => {
-          const index = state.fileList.indexOf(file);
-          const newFileList = state.fileList.slice();
-          newFileList.splice(index, 1);
-          return {
-            fileList: newFileList,
-          };
+    
+      const handleUploadError = error => {
+         setState({
+          isUploading: false
+          // Todo: handle error
         });
-      },
-      beforeUpload: file => {
-        setState(state => ({
-          fileList: [...state.fileList, file],
+        console.error(error);
+      };
+    
+      const handleUploadSuccess = async filename => {
+        const downloadURL = await firebase
+          .storage()
+          .ref("imagenes")
+          .child(filename)
+          .getDownloadURL();
+        let onchangeState = db.collection("fotos");
+        onchangeState.add({
+            "urlImg": downloadURL,
+            "nameImg": filename
+
+        }).then(function () {
+            //alert("Registro cancelado exitosamente");
+
+        }).catch(function (error) {
+            console.error("Error updating document: ", error);
+        });
+        
+        setState(oldState => ({
+          //filenames: [...oldState.filenames, filename],
+          //downloadURLs: [...oldState.downloadURLs, downloadURL],
+          uploadProgress: 100,
+          isUploading: false
         }));
-        return false;
-      },
-      fileList,
-    };
-return(
-    <div>
-        <Upload {...props}>
-          <Button icon={<UploadOutlined />}>Selecciona </Button>
-        </Upload>
-        <Button
-          type="primary"
-          onClick={handleUpload}
-          disabled={fileList.length === 0}
-          loading={uploading}
-          style={{ marginTop: 16 }}
-        >
-          {uploading ? 'Uploading' : 'Start Upload'}
-        </Button>
+      };
+      const { downloadURLs } = state
+    return (
+      <div>
+      <FileUploader
+        accept="image/*"
+        name="image-uploader-multiple"
+        //randomizeFilename
+        storageRef={firebase.storage().ref("imagenes")}
+        onUploadStart={handleUploadStart}
+        onUploadError={handleUploadError}
+        onUploadSuccess={handleUploadSuccess}
+        onProgress={handleProgress}
+        multiple
+      />
+      <p>Progress: {state.uploadProgress}</p>
+       <VerImagen/>  
+
     </div>
-)
+    )
    }
 
 
-export default SubirArchivos;
+export default SubirArchivos; 

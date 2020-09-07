@@ -7,12 +7,9 @@ import HomeInterno from './HomeInterno/HomeInterno.js';
 import Uploadphoto from './uploadphoto/Uploadphoto.js';
 import infoUp from './infoupload/infoupload.js';
 import DetalleBanner from './DetalleBanner/DetalleBanner.js';
-import SubirArchivos from './SubirArchivos/SubirArchivos.js';
-import Comprando from './Comprando/Comprando'
-import Aprobacion from './Aprobacion/Aprobacion'
-import CampañaLista from './CampañaLista/CampañaLista'
-
+import SubirArchivos from './SubirArchivos/SubirArchivos.js'; 
 const Routes = () => {
+
     
     return (
         <Switch>
