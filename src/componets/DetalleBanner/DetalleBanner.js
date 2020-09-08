@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory,Link } from 'react-router-dom'
 import { Row, Col} from 'antd';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 
@@ -97,6 +97,10 @@ let banner = [
 const DetalleBanner = ({sBanner, ban}) =>{
     let history = useHistory()
 
+    function regresar() {
+
+        history.push('/HomeProveedor')
+    }
     function handleClick() {
 
         history.push('/Comprando')
@@ -137,12 +141,12 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
+                        <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
                     </div>
                 </div>
             )}
             <div className='detail-btn-regresar-cont'>  
-                <button className='detail-btn-regresar'>Regresar</button>
+                <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
             </div>
             
             </>
@@ -188,7 +192,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                 </div>
                 )}
                 <div className='detail-btn-regresar-cont'>  
-                    <button className='detail-btn-regresar'>Regresar</button>
+                    <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
                 </div>
             </>
         )

@@ -22,6 +22,7 @@ const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
   const modifiers = { start: from, end: to };
 
   console.log(getInitialState)
+  
   return (
     <div className="RangeExample">
         <h3>Selecciona la fecha de publicación:</h3>

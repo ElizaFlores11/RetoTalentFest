@@ -43,8 +43,17 @@ const Routes = () => {
             <Route exact path="/SubirArchivos">
                 <SubirArchivos />
             </Route>
-            <Route exact path="/Comprando">
-                <Comprando />
+            <Route exact path="/Comprando/superBanner">
+                <Comprando superBanner />
+            </Route>
+            <Route exact path="/Comprando/superBannerCentral">
+                <Comprando sBannnerCentral />
+            </Route>
+            <Route exact path="/Comprando/bannerCentral">
+                <Comprando banner />
+            </Route>
+            <Route exact path="/Comprando/bannerDpto">
+                <Comprando bannerDpto />
             </Route>
             <Route exact path="/Aprobacion">
                 <Aprobacion />
