@@ -26,7 +26,7 @@ const Logo = ({small = false, big = false})=> {
 
     return(
         <div className='logo-container'>
-            <img src={src} style={style} alt={alt} className={classNam}></img>
+            <img id={small? 'small-logo': 'big-logo'}src={src} style={style} alt={alt} className={classNam}></img>
         </div>
     )
 }

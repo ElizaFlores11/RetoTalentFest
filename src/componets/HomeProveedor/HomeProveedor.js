@@ -45,6 +45,7 @@ const HomeProveedor = () =>{
       <Content>
         <Row>
           <Col span={12} push={3} >
+            <h1 className='h1-welcome' id='home-title'>Bienvenido</h1>
             <Pasos />
           </Col>
         </Row>

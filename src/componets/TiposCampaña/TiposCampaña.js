@@ -17,7 +17,7 @@ const TiposdeCampaña = ()=> {
     }
     return(
         <div className='tipos-container'>
-            <h1 className='h1-tipos'>¿Dónde te gustaría publicitarte?</h1>
+            <p className='text' id='pasos-text'>¿Dónde te gustaría publicitarte?</p>
             <img src={template}></img>
             
                 <button className='yellow-btn' id='superbanner-btn' onClick={handleClick}>Ver detalles</button>   
