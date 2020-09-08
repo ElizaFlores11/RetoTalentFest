@@ -5,7 +5,7 @@ import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 
 import '../../styles/detalleBanner.scss'
 
-let superBanner = [
+let superBanner =
     {
         id: 'superBanner',
         descripción: {
@@ -26,8 +26,10 @@ let superBanner = [
         },
 
         img:'../assets/sBanner.png'
-    },
-    {
+    }
+
+let sBanCentral=    
+     {
         id: 'superBannerCentral',
         descripción: {
             texto:'Es una campaña ubicada dentro del departamento que corresponde a tu producto, es una presentación de carrusel.',
@@ -48,8 +50,7 @@ let superBanner = [
 
         img:'../assets/sBannerCentral.png'
     }
-]
-let banner = [
+let banner = 
     {
         id: 'bannerCentral',
         descripción: {
@@ -70,7 +71,8 @@ let banner = [
         },
 
         img:'../assets/banner.png'
-    },
+    }
+let banCentral =   
     {
         id: 'bannerDpto',
         descripción: {
@@ -92,7 +94,7 @@ let banner = [
 
         img:'../assets/bannerDpto.png'
     }
-]
+
 
 const DetalleBanner = ({sBanner, ban}) =>{
     let history = useHistory()
@@ -101,16 +103,27 @@ const DetalleBanner = ({sBanner, ban}) =>{
 
         history.push('/HomeProveedor')
     }
-    function handleClick() {
-
-        history.push('/Comprando')
+ 
+    function handleClick1() {
+            history.push('/Comprando/superBanner')        
     }
+    function handleClick2() {
+        history.push('/Comprando/superBannerCentral')        
+    }
+    function handleClick3() {
+        history.push('/Comprando/bannerCentral')        
+    }
+    function handleClick4() {
+        history.push('/Comprando/bannerDpto')        
+
+    }
+
     if(sBanner){
         return(
             <>
             <MenuProveedor />
             <h1 className='h1-welcome'>Super Banner</h1>
-            {superBanner.map(ban=>              
+            {superBanner.filter(ban=>              
                 <div className='detail-blue-container'>
                     
                     <Row justify="space-around" align="bottom">
@@ -141,7 +154,42 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
+                        <button className='yellow-btn detail' onClick={handleClick1}>Comprar</button>
+                    </div>
+                </div>
+            )};
+            {sBanCentral.filter(ban=>              
+                <div className='detail-blue-container'>
+                    
+                    <Row justify="space-around" align="bottom">
+                    <Col span={12}>
+                        <div className='detail-img-container'>
+                            <img src={ban.img} key={ban.id} className='banner-detail-img'></img>
+                        </div>                        
+                    </Col>
+                    <Col span={12}>
+                        <div className='detail-container'>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
+                            <div>{ban.descripción.texto}</div>
+                        </div>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
+                            <div>{ban.ventaja.texto}</div>
+                        </div>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
+                            <div>{ban.ubicación.texto}</div>
+                        </div>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
+                            <div>{ban.costo.texto}</div>
+                        </div>
+                        </div>
+                    </Col>
+                    </Row>
+                    <div className='detail-btn-comprar'>
+                        <button className='yellow-btn detail' onClick={handleClick2}>Comprar</button>
                     </div>
                 </div>
             )}
@@ -152,11 +200,12 @@ const DetalleBanner = ({sBanner, ban}) =>{
             </>
         )
     } else if (ban){
+    
         return(
             <>
                 <MenuProveedor />
                 <h1 className='h1-welcome'>Banner</h1>
-                {banner.map(ban=>
+                {banner.filter(ban=>
                     <div className='detail-blue-container'>
                                         
                     <Row justify="space-around" align="bottom">
@@ -187,10 +236,45 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
+                        <button className='yellow-btn detail' onClick={handleClick3}>Comprar</button>
                     </div>
                 </div>
-                )}
+                )};
+                {banCentral.filter(ban=>              
+                <div className='detail-blue-container'>
+                    
+                    <Row justify="space-around" align="bottom">
+                    <Col span={12}>
+                        <div className='detail-img-container'>
+                            <img src={ban.img} key={ban.id} className='banner-detail-img'></img>
+                        </div>                        
+                    </Col>
+                    <Col span={12}>
+                        <div className='detail-container'>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
+                            <div>{ban.descripción.texto}</div>
+                        </div>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
+                            <div>{ban.ventaja.texto}</div>
+                        </div>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
+                            <div>{ban.ubicación.texto}</div>
+                        </div>
+                        <div className='details-flex-container'>
+                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
+                            <div>{ban.costo.texto}</div>
+                        </div>
+                        </div>
+                    </Col>
+                    </Row>
+                    <div className='detail-btn-comprar'>
+                        <button className='yellow-btn detail' onClick={handleClick4}>Comprar</button>
+                    </div>
+                </div>
+            )}
                 <div className='detail-btn-regresar-cont'>  
                     <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
                 </div>
