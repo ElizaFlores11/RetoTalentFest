@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {firebase} from '../../firebase/configFirebase'; 
-import FileUploader from "react-firebase-file-uploader";
+import FileUploader from 'react-firebase-file-uploader';
 require("firebase/storage");
 
 const SubirArchivos = () =>{

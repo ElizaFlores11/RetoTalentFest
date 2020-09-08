@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col} from 'antd';
+import '../../styles/DetalleBanner.scss';
 
 let superBanner = [
     {
@@ -94,37 +95,42 @@ const DetalleBanner = ({sBanner, ban}) =>{
     if(sBanner){
         return(
             <>
-            {superBanner.map(ban=>              
-                <div>
+            {superBanner.map(ban=>  
+
+            
+
+                <div >
                     <Row justify="space-around" align="bottom">
-                    <Col span={4}>
+                    <Col flex="0 1 300px">
                         <div>
                             <img src={ban.img} key={ban.id} ></img>
                         </div>                        
                     </Col>
-                    <Col span={4}>
-                        <div className='details-flex-container'>
+                    <Col flex="1 1 200px">
+                        
+                        <Row className='details-flex-container'>
                             <img src={ban.descripción.icon}></img>
                             <div>{ban.descripción.texto}</div>
-                        </div>
-                        <div className='details-flex-container'>
+                        </Row>
+                        <Row className='details-flex-container'>
                             <img src={ban.ventaja.icon}></img>
                             <div>{ban.ventaja.texto}</div>
-                        </div>
-                        <div className='details-flex-container'>
+                        </Row>
+                        <Row className='details-flex-container'>
                             <img src={ban.ubicación.icon}></img>
                             <div>{ban.ubicación.texto}</div>
-                        </div>
-                        <div className='details-flex-container'>
+                        </Row>
+                        <Row className='details-flex-container'>
                             <img src={ban.costo.icon}></img>
                             <div>{ban.costo.texto}</div>
-                        </div>
+                        </Row>
                     </Col>
                     </Row>
                     <div>
                         <button className='yellow-btn'>Comprar</button>
                     </div>
                 </div>
+             
             )}
             </>
         )

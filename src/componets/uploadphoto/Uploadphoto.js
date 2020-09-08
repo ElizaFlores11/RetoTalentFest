@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Upload, Button, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import reqwest from 'reqwest';
+import request from 'request';
 
 const Uploadphoto = () =>{
   const [state, setState] =useState({
@@ -20,7 +20,7 @@ const Uploadphoto = () =>{
       uploading: true,
     });
     // You can use any AJAX library you like
-    reqwest({
+    request({
       url: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
       method: 'post',
       processData: false,
