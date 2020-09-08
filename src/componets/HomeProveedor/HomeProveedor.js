@@ -1,4 +1,6 @@
 import React from 'react';
+// import {db} from '../../firebase';
+
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 import Pasos from '../Pasos/Pasos'
 import TiposCampaña from '../TiposCampaña/TiposCampaña'
@@ -7,6 +9,34 @@ import { Row, Col, Layout } from 'antd';
 const { Header, Content } = Layout;
 
 const HomeProveedor = () =>{
+
+  // const [contrato, setContrato]= useState([]);
+  // const getInfo = async () =>{
+  //   let contratoPublicidad = db.collection('users')
+  //   contratoPublicidad.onSnapshot((querySnapshot)=>{
+  //     const docs = [];
+  //     querySnapshot.
+
+
+  //   })
+  // }
+
+  // const [finishedOrders, setFinishedOrders] = useState([]);
+  //   const getFinishedOrders = async () => {
+  //       let orders = db.collection('orders').where("status", "==", true).orderBy('finish', 'desc');
+  //       orders.onSnapshot((querySnapshot) => {
+  //           const docs = [];
+  //           querySnapshot.forEach((doc) => {
+  //               docs.push({...doc.data(), id: doc.id})
+  //           });
+  //           setFinishedOrders(docs);
+  //       });
+  //   }
+
+  //   useEffect(() => {
+  //       getFinishedOrders();
+  //   }, [])
+
     return(
     <Layout>
       <Header>

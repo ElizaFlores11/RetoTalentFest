@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom'
 import { Row, Col} from 'antd';
 
 let superBanner = [
@@ -91,6 +92,12 @@ let banner = [
 ]
 
 const DetalleBanner = ({sBanner, ban}) =>{
+    let history = useHistory()
+
+    function handleClick() {
+
+        history.push('/Comprando')
+    }
     if(sBanner){
         return(
             <>
@@ -122,10 +129,14 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div>
-                        <button className='yellow-btn'>Comprar</button>
+                        <button className='yellow-btn' onClick={handleClick}>Comprar</button>
                     </div>
                 </div>
             )}
+            <div>  
+                <button>Regresar</button>
+            </div>
+            
             </>
         )
     } else if (ban){
@@ -159,10 +170,13 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div>
-                        <button className='yellow-btn'>Comprar</button>
+                        <button className='yellow-btn' onClick={handleClick}>Comprar</button>
                     </div>
                 </div>
                 )}
+                <div>  
+                    <button>Regresar</button>
+                </div>
             </>
         )
     }
