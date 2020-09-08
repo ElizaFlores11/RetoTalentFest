@@ -1,6 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
 import { Row, Col} from 'antd';
+import MenuProveedor from  '../MenuProveedor/MenuProveedor'
+
+import '../../styles/detalleBanner.scss'
 
 let superBanner = [
     {
@@ -101,40 +104,45 @@ const DetalleBanner = ({sBanner, ban}) =>{
     if(sBanner){
         return(
             <>
+            <MenuProveedor />
+            <h1 className='h1-welcome'>Super Banner</h1>
             {superBanner.map(ban=>              
-                <div>
+                <div className='detail-blue-container'>
+                    
                     <Row justify="space-around" align="bottom">
-                    <Col span={4}>
-                        <div>
-                            <img src={ban.img} key={ban.id} ></img>
+                    <Col span={12}>
+                        <div className='detail-img-container'>
+                            <img src={ban.img} key={ban.id} className='banner-detail-img'></img>
                         </div>                        
                     </Col>
-                    <Col span={4}>
+                    <Col span={12}>
+                        <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img src={ban.descripción.icon}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.ventaja.icon}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.ubicación.icon}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.costo.icon}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
                             <div>{ban.costo.texto}</div>
+                        </div>
                         </div>
                     </Col>
                     </Row>
-                    <div>
-                        <button className='yellow-btn' onClick={handleClick}>Comprar</button>
+                    <div className='detail-btn-comprar'>
+                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
                     </div>
                 </div>
             )}
-            <div>  
-                <button>Regresar</button>
+            <div className='detail-btn-regresar-cont'>  
+                <button className='detail-btn-regresar'>Regresar</button>
             </div>
             
             </>
@@ -142,40 +150,45 @@ const DetalleBanner = ({sBanner, ban}) =>{
     } else if (ban){
         return(
             <>
+                <MenuProveedor />
+                <h1 className='h1-welcome'>Banner</h1>
                 {banner.map(ban=>
-                    <div>
+                    <div className='detail-blue-container'>
+                                        
                     <Row justify="space-around" align="bottom">
-                    <Col span={4}>
-                        <div>
-                            <img src={ban.img} key={ban.id} ></img>
+                    <Col  span={12}>
+                        <div className='detail-img-container'>
+                            <img className='icon' src={ban.img} key={ban.id} className='banner-detail-img'></img>
                         </div>                        
                     </Col>
-                    <Col span={4}>
+                    <Col  span={12}>
+                        <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img src={ban.descripción.icon}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.ventaja.icon}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.ubicación.icon}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.costo.icon}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
                             <div>{ban.costo.texto}</div>
+                        </div>
                         </div>
                     </Col>
                     </Row>
-                    <div>
-                        <button className='yellow-btn' onClick={handleClick}>Comprar</button>
+                    <div className='detail-btn-comprar'>
+                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
                     </div>
                 </div>
                 )}
-                <div>  
-                    <button>Regresar</button>
+                <div className='detail-btn-regresar-cont'>  
+                    <button className='detail-btn-regresar'>Regresar</button>
                 </div>
             </>
         )
