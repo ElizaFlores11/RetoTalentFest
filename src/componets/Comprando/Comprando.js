@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom'
-import {db} from '../../firebase';
+import {db} from '../../firebase/configFirebase';
 import Calendario from '../Calendario/Calendario'
 import SubirArchivos from '../SubirArchivos/SubirArchivos'
 import MenuProveedor from '../MenuProveedor/MenuProveedor'
@@ -12,14 +12,21 @@ const Comprando= ()=> {
 
     function handleClick() {
 
-        history.push('/Aprobacion')
+        history.push('/Aprobacion');
+        db.collection('banner').add({
+            from: getInitialState.from,
+            to: getInitialState.to
+        }).then(()=>{
+            console.log('tus fechas han sido agendadas')
+        }) .catch((error) => {
+            console.error("Error al subir tus fechas", error);
+        });
     }
     const [getInitialState, setGetInitialState] = useState({
         from: undefined,
         to: undefined
       });
 
-  
 
 
     return(
