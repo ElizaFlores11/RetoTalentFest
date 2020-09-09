@@ -5,7 +5,6 @@ import IniciarSesion from './IniciarSesion/IniciarSesion.js';
 import HomeProveedor from './HomeProveedor/HomeProveedor.js'; 
 import HomeInterno from './HomeInterno/HomeInterno.js'; 
 import Uploadphoto from './uploadphoto/Uploadphoto.js';
-import Detalles from './DetalleBanner/Detalles'
 import infoUp from './infoupload/infoupload.js';
 import DetalleBanner from './DetalleBanner/DetalleBanner.js';
 //import SubirArchivos from './SubirArchivos/SubirArchivos.js'

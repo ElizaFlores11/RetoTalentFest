@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import {firebase} from '../../firebase/configFirebase'; 
 import FileUploader from 'react-firebase-file-uploader';
+=======
+import {firebase, db} from '../../firebase/configFirebase'; 
+import FileUploader from "react-firebase-file-uploader";
+import VerImagen from "../VerImagen/VerImagen"
+>>>>>>> e7867230ebdae9cc29a1141d536e944dee7fcbae
 require("firebase/storage");
-
 const SubirArchivos = () =>{
     const [state, setState] = useState({
         filenames: [],
@@ -36,7 +41,18 @@ const SubirArchivos = () =>{
           .ref("imagenes")
           .child(filename)
           .getDownloadURL();
-    
+        let onchangeState = db.collection("fotos");
+        onchangeState.add({
+            "urlImg": downloadURL,
+            "nameImg": filename
+
+        }).then(function () {
+            //alert("Registro cancelado exitosamente");
+
+        }).catch(function (error) {
+            console.error("Error updating document: ", error);
+        });
+        
         setState(oldState => ({
           //filenames: [...oldState.filenames, filename],
           //downloadURLs: [...oldState.downloadURLs, downloadURL],
@@ -44,12 +60,13 @@ const SubirArchivos = () =>{
           isUploading: false
         }));
       };
+      const { downloadURLs } = state
     return (
       <div>
       <FileUploader
         accept="image/*"
         name="image-uploader-multiple"
-        randomizeFilename
+        //randomizeFilename
         storageRef={firebase.storage().ref("imagenes")}
         onUploadStart={handleUploadStart}
         onUploadError={handleUploadError}
@@ -57,11 +74,9 @@ const SubirArchivos = () =>{
         onProgress={handleProgress}
         multiple
       />
-
       <p>Progress: {state.uploadProgress}</p>
+       <VerImagen/>  
 
-   
-      
     </div>
     )
    }

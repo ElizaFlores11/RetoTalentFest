@@ -3,29 +3,26 @@ import Helmet from "react-helmet";
 import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
 
-const Calendario = () => {
-  const [getInitialState, setGetInitialState] = useState({
-    from: undefined,
-    to: undefined
-  });
+const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
 
+  numberOfMonths=3
+  
   const handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, getInitialState);
-    setGetInitialState(range);
+    setGetInitialState(range)
   };
   const handleResetClick = () => {
-    getInitialState(setGetInitialState());
+    setGetInitialState({
+      from: undefined,
+      to: undefined
+    });
   };
+  
   const { from, to } = getInitialState;
   const modifiers = { start: from, end: to };
-/* `Selected from ${from.toLocaleDateString()} to
-                ${to.toLocaleDateString()}`}{" "}*
-        {from && to && (
-          <button className="link" onClick={handleResetClick}>
-            Reset
-          </button>
-        )}*/
-                
+
+  console.log(getInitialState)
+  
   return (
     <div className="RangeExample">
         <h3>Selecciona la fecha de publicación:</h3>
@@ -34,17 +31,17 @@ const Calendario = () => {
         {from && !to && "Please select the last day."}
         {from &&
           to &&
-           <input value={from.toLocaleDateString()} />  
-         }
-        {from &&
-          to &&
-           <input value={to.toLocaleDateString()} />
-        }
-         
+          `Selected from ${from.toLocaleDateString()} to
+                ${to.toLocaleDateString()}`}{" "}
+        {from && to && (
+          <button className="link" onClick={handleResetClick}>
+            Reset
+          </button>
+        )}
       </p>
       <DayPicker
         className="Selectable"
-        //numberOfMonths={this.props.numberOfMonths}
+        numberOfMonths={numberOfMonths}
         selectedDays={[from, { from, to }]}
         modifiers={modifiers}
         onDayClick={handleDayClick}

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useHistory,Link } from 'react-router-dom'
 import { Row, Col} from 'antd';
 import '../../styles/DetalleBanner.scss';
+import MenuProveedor from  '../MenuProveedor/MenuProveedor';
 
 let superBanner = [
     {
@@ -92,6 +94,16 @@ let banner = [
 ]
 
 const DetalleBanner = ({sBanner, ban}) =>{
+    let history = useHistory()
+
+    function regresar() {
+
+        history.push('/HomeProveedor')
+    }
+    function handleClick() {
+
+        history.push('/Comprando')
+    }
     if(sBanner){
         return(
             <>
@@ -126,49 +138,61 @@ const DetalleBanner = ({sBanner, ban}) =>{
                         </Row>
                     </Col>
                     </Row>
-                    <div>
-                        <button className='yellow-btn'>Comprar</button>
+                    <div className='detail-btn-comprar'>
+                        <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
                     </div>
                 </div>
              
             )}
+            <div className='detail-btn-regresar-cont'>  
+                <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
+            </div>
+            
             </>
         )
     } else if (ban){
         return(
             <>
+                <MenuProveedor />
+                <h1 className='h1-welcome'>Banner</h1>
                 {banner.map(ban=>
-                    <div>
+                    <div className='detail-blue-container'>
+                                        
                     <Row justify="space-around" align="bottom">
-                    <Col span={4}>
-                        <div>
-                            <img src={ban.img} key={ban.id} ></img>
+                    <Col  span={12}>
+                        <div className='detail-img-container'>
+                            <img className='icon' src={ban.img} key={ban.id} className='banner-detail-img'></img>
                         </div>                        
                     </Col>
-                    <Col span={4}>
+                    <Col  span={12}>
+                        <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img src={ban.descripción.icon}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.ventaja.icon}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.ubicación.icon}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img src={ban.costo.icon}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
                             <div>{ban.costo.texto}</div>
+                        </div>
                         </div>
                     </Col>
                     </Row>
-                    <div>
-                        <button className='yellow-btn'>Comprar</button>
+                    <div className='detail-btn-comprar'>
+                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
                     </div>
                 </div>
                 )}
+                <div className='detail-btn-regresar-cont'>  
+                    <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
+                </div>
             </>
         )
     }
