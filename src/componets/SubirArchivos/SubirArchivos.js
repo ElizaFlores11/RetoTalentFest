@@ -4,6 +4,7 @@ import FileUploader from "react-firebase-file-uploader";
 import VerImagen from "../VerImagen/VerImagen"
 require("firebase/storage");
 const SubirArchivos = () =>{
+    /* <VerImagen/>  */
     const [state, setState] = useState({
         filenames: [],
         downloadURLs: [],
@@ -70,8 +71,6 @@ const SubirArchivos = () =>{
         multiple
       />
       <p>Progress: {state.uploadProgress}</p>
-       <VerImagen/>  
-
     </div>
     )
    }

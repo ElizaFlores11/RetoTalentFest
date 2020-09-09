@@ -1,23 +1,26 @@
 import React, {Fragment, useState} from 'react';
 import { Select } from 'antd';
   const { Option } = Select;
-  const onChange = (value)=> {
-    console.log(`selected ${value}`);
+  
+
+const Dropdowndept = ({dept, depto, setDepto})=>{
+  
+  const { departamento } = depto
+  const onChange2 = (value)=> {
+   const departamento = `${value}`;
+    setDepto(depto + 1)
+    
   }
-
-
-const Dropmenu = ()=>{
-  const formValidation = () =>{
-    console.log("Hola"); 
-}
-  return (
+  console.log(departamento)
+    return (
     <Fragment >
     <Select
     showSearch
     style={{ width: 200 }}
-    placeholder="Select a person"
+    placeholder="Selecciona Departamento"
     optionFilterProp="children"
-    //onChange={onChange}
+    //value={departamento}
+    onChange={onChange2}
     filterOption={(input, option) =>
       option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
     }
@@ -33,15 +36,9 @@ const Dropmenu = ()=>{
     <Option value="Películas, libros & artículos de temporada">Películas, libros & artículos de temporada</Option>
     <Option value="Vinos, licores & despensa">Vinos, licores & despensa</Option>
   </Select>
-
-  <button
-    type="button"
-    className="btn-send-kitchen"
-    onClick={formValidation}
-  >Guardar Datos</button>
 </Fragment>
   )
 }
 ;
 
-export default Dropmenu;
+export default Dropdowndept;

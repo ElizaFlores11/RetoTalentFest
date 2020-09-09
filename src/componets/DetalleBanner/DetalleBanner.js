@@ -1,9 +1,11 @@
-import React from 'react';
-import { useHistory,Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
+import {firebase, db} from '../../firebase/configFirebase';  
+import { useHistory, Link } from 'react-router-dom'
 import { Row, Col} from 'antd';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 
 import '../../styles/detalleBanner.scss'
+require('firebase/auth')
 
 let superBanner = [
     {
@@ -95,12 +97,23 @@ let banner = [
 ]
 
 const DetalleBanner = ({sBanner, ban}) =>{
+    const user = firebase.auth().currentUser;
+    const  uid = 'q9R1VgxL0DfgfMY0KoKYhi3isw52'  
+    //console.log(uid); 
+    //console.log(user); 
+      const [usuario, setUsuario] = useState([]);
+      //const [uids, setUids] = useState({uid: {uid}})  
+      useEffect(() => {
+       const goUser = db.collection('users').where('uid', '==', uid );
+       return goUser.onSnapshot(snapshotReady => {
+         const userData = []
+         snapshotReady.forEach(doc => userData.push({ ...doc.data(), id: doc.id }));
+         setUsuario(userData);
+      });
+     }, []);  
+  
     let history = useHistory()
 
-    function regresar() {
-
-        history.push('/HomeProveedor')
-    }
     function handleClick() {
 
         history.push('/Comprando')
@@ -141,7 +154,8 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
+
+                    <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
                     </div>
                 </div>
             )}
