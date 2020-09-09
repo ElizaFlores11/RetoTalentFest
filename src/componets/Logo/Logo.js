@@ -2,7 +2,7 @@ import React  from 'react';
 import logo from '../assets/walmart.png'
 import logoBlanco from '../assets/walmartBlanco.png'
 
-const Logo = ({small = false, big = false})=> {
+const Logo = ({small = false, big = false, login=false})=> {
 
     let src = logo
     let alt = 'small'
@@ -19,9 +19,16 @@ const Logo = ({small = false, big = false})=> {
             height: 'auto'
         }
     }
-    else{
+    else if(big){
         alt= 'big'
         classNam= 'logo-big'
+    } else if (login){
+        src = logoBlanco
+        style = {
+            width: '180px',
+            height: 'auto'
+        }
+        classNam='logo-login'
     }
 
     return(

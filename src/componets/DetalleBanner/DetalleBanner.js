@@ -187,7 +187,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
+                    <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button></Link>
                     </div>
                 </div>
                 )}

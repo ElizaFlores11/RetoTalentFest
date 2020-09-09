@@ -8,7 +8,7 @@ const Login = () =>{
     return ( 
       <>
         <div className='header-nav'>         
-          <Logo small />          
+          <Logo login />          
         </div> 
         <div className="toprow">
           <Row>  
