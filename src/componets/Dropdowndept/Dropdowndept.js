@@ -1,26 +1,28 @@
 import React, {Fragment, useState} from 'react';
 import { Select } from 'antd';
+import { blue } from 'color-name';
   const { Option } = Select;
-  
-
-const Dropdowndept = ({dept, depto, setDepto})=>{
-  
-  const { departamento } = depto
-  const onChange2 = (value)=> {
-   const departamento = `${value}`;
-    setDepto(depto + 1)
-    
+  const onChange = (value)=> {
+    console.log(`selected ${value}`);
   }
-  console.log(departamento)
-    return (
+
+
+const Dropmenu = ()=>{
+  // const formValidation = () =>{
+  //   console.log("Hola"); 
+  // }
+  return (
     <Fragment >
+    <div className='dropdown-container'>
+      <div className='dropdown-text-container'>
+        <p className='p-text'>Elige lugar de publicación:</p>
+      </div>
     <Select
     showSearch
-    style={{ width: 200 }}
-    placeholder="Selecciona Departamento"
+    style={{ width: 305}}
+    placeholder="Departamento"
     optionFilterProp="children"
-    //value={departamento}
-    onChange={onChange2}
+    //onChange={onChange}
     filterOption={(input, option) =>
       option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
     }
@@ -36,9 +38,15 @@ const Dropdowndept = ({dept, depto, setDepto})=>{
     <Option value="Películas, libros & artículos de temporada">Películas, libros & artículos de temporada</Option>
     <Option value="Vinos, licores & despensa">Vinos, licores & despensa</Option>
   </Select>
+  </div>
+  {/* <button
+    type="button"
+    className="btn-send-kitchen"
+    onClick={formValidation}
+  >Guardar Datos</button> */}
 </Fragment>
   )
 }
 ;
 
-export default Dropdowndept;
+export default Dropmenu;

@@ -18,34 +18,3 @@ const firebaseConfig = {
   export  {firebase}
   export const db = firebase.firestore();
   
-  export const userStatus = (user) => {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        return user; 
-        console.log(user);
-        //router('content');
-      } else {
-        console.log("user");
-      }
-    });
-  }
-  
-  /*
-  try {
-            
-            const res = await firebase.auth().signInWithEmailAndPassword(email, password);
-            console.log(res);
-            props.history.push('/IniciarSesion');
-        } catch (error) {
-            //console.log(error);
-            if (error.code === "auth/user-not-found") {
-                setBug("Usuario no registrado");
-              }
-              if (error.code === "auth/wrong-password") {
-                setBug("Contraseña incorrecta");
-              }
-              if (error.code === "auth/invalid-email") {
-                setBug("Email con formato equivocado");
-              }
-        }*/
-
