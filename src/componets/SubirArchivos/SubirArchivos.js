@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {firebase, db} from '../../firebase/configFirebase'; 
 import FileUploader from "react-firebase-file-uploader";
+import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import VerImagen from "../VerImagen/VerImagen"
 import icon from '../assets/pasos2.png'
 import '../../styles/comprando.scss'
@@ -75,7 +76,9 @@ const SubirArchivos = () =>{
             </div>
           </div>
         </div>
+        <button className='btn-upload-files' style={{width:160, height: 50, backgroundColor: '#FDBB2F',}}>Cargar
         <FileUploader
+          
           accept="image/*"
           name="image-uploader-multiple"
           //randomizeFilename
@@ -85,7 +88,10 @@ const SubirArchivos = () =>{
           onUploadSuccess={handleUploadSuccess}
           onProgress={handleProgress}
           multiple
-        /> 
+          style={{opacity:0}}
+          
+        />
+        </button> 
         </div>
         <div className='remember-container'>
           <h1>Recuerda:</h1>

@@ -83,8 +83,12 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
                             </div>
                             <SubirArchivos />
-                            <button onClick={handleClick}>Enviar</button>
-                            <button>Cancelar</button>
+                            <div className='div-btn-comprando'>
+                                <button className='send-btn' onClick={handleClick}>Enviar</button>
+                            </div>
+                            <div className='div-btn-comprando'>
+                                <button className='cancel-btn'>Cancelar</button>
+                            </div>
                         </div>
                     </Content>
                 </Layout>
@@ -109,8 +113,12 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 <Calendario  getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
                             </div>
                             <SubirArchivos />
-                            <button onClick={handleClick}>Enviar</button>
-                            <button>Cancelar</button>
+                            <div className='div-btn-comprando'> 
+                                <button className='send-btn' onClick={handleClick}>Enviar</button>
+                            </div>
+                            <div className='div-btn-comprando'> 
+                                <button className='cancel-btn'>Cancelar</button>
+                            </div>
                         </div>
                     </Content>
                 </Layout>
@@ -135,8 +143,12 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
                             </div>
                             <SubirArchivos />
-                            <button onClick={handleClick}>Enviar</button>
-                            <button>Cancelar</button>
+                            <div className='div-btn-comprando'>
+                                <button className='send-btn' onClick={handleClick}>Enviar</button>
+                            </div>
+                            <div className='div-btn-comprando'>
+                                <button className='cancel-btn'>Cancelar</button>
+                            </div>
                         </div>
                     </Content>
                 </Layout>
@@ -161,8 +173,12 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
                             </div>
                             <SubirArchivos />
-                            <button onClick={handleClick}>Enviar</button>
-                            <button>Cancelar</button>
+                            <div className='div-btn-comprando'>
+                                <button className='send-btn' onClick={handleClick}>Enviar</button>
+                            </div>
+                            <div className='div-btn-comprando'>
+                                <button className='cancel-btn'>Cancelar</button>
+                            </div>
                         </div>
                     </Content>
                 </Layout>
