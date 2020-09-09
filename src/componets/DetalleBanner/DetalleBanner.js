@@ -154,12 +154,13 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
+
                     <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
                     </div>
                 </div>
             )}
             <div className='detail-btn-regresar-cont'>  
-                <button className='detail-btn-regresar'>Regresar</button>
+                <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
             </div>
             
             </>
@@ -200,12 +201,12 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                    <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
+                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
                     </div>
                 </div>
                 )}
                 <div className='detail-btn-regresar-cont'>  
-                    <button className='detail-btn-regresar'>Regresar</button>
+                    <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
                 </div>
             </>
         )
