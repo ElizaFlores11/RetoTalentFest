@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import { Menu, } from 'antd';
 import 'antd/dist/antd.css';
+import {db} from '../../firebase/configFirebase';
+import { Fragment } from 'react';
 
 const datosCuenta = () =>{
     return(
-        <div>
+        <Fragment>
         <ul>Para finalizar el proceso de contratación, ingresa tus datos de cuenta para realizar el pago correspondiente</ul>
         <h3>DATOS DE CUENTA</h3>
         <Menu>
@@ -26,7 +28,7 @@ const datosCuenta = () =>{
     <Input placeholder="Basic usage" title="Vencimiento de tarjeta" />
     <br></br>
     <Input placeholder="Basic usage" title="Nombre del titular" />
-    </div>
+    </Fragment>
     )
 }
 ;

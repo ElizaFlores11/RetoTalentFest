@@ -7,6 +7,7 @@ import HomeInterno from './HomeInterno/HomeInterno.js';
 import Uploadphoto from './uploadphoto/Uploadphoto.js';
 import infoUp from './infoupload/infoupload.js';
 import DetalleBanner from './DetalleBanner/DetalleBanner.js';
+import Aprobacion from './Aprobacion/Aprobacion.js'
 //import SubirArchivos from './SubirArchivos/SubirArchivos.js'
 const Routes = ({tipo}) => {
 
@@ -36,6 +37,9 @@ const Routes = ({tipo}) => {
             </Route>
             <Route exact path="/DetallesBanners/banner">
                 <DetalleBanner ban/>
+            </Route>
+            <Route exact path="/Aprobacion">
+                <Aprobacion ban/>
             </Route>
           
         </Switch>
