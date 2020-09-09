@@ -97,12 +97,10 @@ let banner = [
 ]
 
 const DetalleBanner = ({sBanner, ban}) =>{
-    const user = firebase.auth().currentUser;
+    //const user = firebase.auth().currentUser;
     const  uid = 'q9R1VgxL0DfgfMY0KoKYhi3isw52'  
-    //console.log(uid); 
     //console.log(user); 
       const [usuario, setUsuario] = useState([]);
-      //const [uids, setUids] = useState({uid: {uid}})  
       useEffect(() => {
        const goUser = db.collection('users').where('uid', '==', uid );
        return goUser.onSnapshot(snapshotReady => {
@@ -113,7 +111,10 @@ const DetalleBanner = ({sBanner, ban}) =>{
      }, []);  
   
     let history = useHistory()
+    function regresar() {
 
+        history.push('/HomeProveedor')
+    }
     function handleClick() {
 
         history.push('/Comprando')
@@ -129,25 +130,25 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     <Row justify="space-around" align="bottom">
                     <Col span={12}>
                         <div className='detail-img-container'>
-                            <img src={ban.img} key={ban.id} className='banner-detail-img'></img>
+                            <img src={ban.img} key={ban.id} className='banner-detail-img' alt="banner1"></img>
                         </div>                        
                     </Col>
                     <Col span={12}>
                         <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id} alt="banner2"></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id} alt="banner3"></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id} alt="banner4"></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner5"></img>
                             <div>{ban.costo.texto}</div>
                         </div>
                         </div>
@@ -176,25 +177,25 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     <Row justify="space-around" align="bottom">
                     <Col  span={12}>
                         <div className='detail-img-container'>
-                            <img className='icon' src={ban.img} key={ban.id} className='banner-detail-img'></img>
+                            <img className='icon' src={ban.img} key={ban.id} className='banner-detail-img' alt="banner6"></img>
                         </div>                        
                     </Col>
                     <Col  span={12}>
                         <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id} alt="banner7"></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id} alt="banner8"></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id} alt="banner9"></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner10"></img>
                             <div>{ban.costo.texto}</div>
                         </div>
                         </div>
