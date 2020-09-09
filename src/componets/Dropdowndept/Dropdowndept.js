@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import { Select } from 'antd';
+import { blue } from 'color-name';
   const { Option } = Select;
   const onChange = (value)=> {
     console.log(`selected ${value}`);
@@ -7,15 +8,19 @@ import { Select } from 'antd';
 
 
 const Dropmenu = ()=>{
-  const formValidation = () =>{
-    console.log("Hola"); 
-}
+  // const formValidation = () =>{
+  //   console.log("Hola"); 
+  // }
   return (
     <Fragment >
+    <div className='dropdown-container'>
+      <div className='dropdown-text-container'>
+        <p className='p-text'>Elige lugar de publicación:</p>
+      </div>
     <Select
     showSearch
-    style={{ width: 200 }}
-    placeholder="Select a person"
+    style={{ width: 305}}
+    placeholder="Departamento"
     optionFilterProp="children"
     //onChange={onChange}
     filterOption={(input, option) =>
@@ -33,12 +38,12 @@ const Dropmenu = ()=>{
     <Option value="Películas, libros & artículos de temporada">Películas, libros & artículos de temporada</Option>
     <Option value="Vinos, licores & despensa">Vinos, licores & despensa</Option>
   </Select>
-
-  <button
+  </div>
+  {/* <button
     type="button"
     className="btn-send-kitchen"
     onClick={formValidation}
-  >Guardar Datos</button>
+  >Guardar Datos</button> */}
 </Fragment>
   )
 }

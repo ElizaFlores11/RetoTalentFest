@@ -4,7 +4,10 @@ import {db} from '../../firebase/configFirebase';
 import Calendario from '../Calendario/Calendario'
 import SubirArchivos from '../SubirArchivos/SubirArchivos'
 import MenuProveedor from '../MenuProveedor/MenuProveedor'
-import { Row, Col, Layout, Calendar } from 'antd';
+import Dropdowndept from '../Dropdowndept/Dropdowndept'
+import icon from '../assets/pasos1.png'
+import '../../styles/comprando.scss'
+import {Layout} from 'antd';
 const { Header, Content } = Layout;
 
 const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
@@ -69,10 +72,20 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                         <MenuProveedor/>
                     </Header>
                     <Content>
-                        <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
-                        <SubirArchivos />
-                        <button onClick={handleClick}>Enviar</button>
-                        <button>Cancelar</button>
+                        <h1 className='h1-welcome'>Comprando</h1>
+                        <div className='blue-container'>
+                            <img src={icon} className='icon-medium'></img>
+                            <p className='text-blue'>Has elegido el Super Banner</p>
+                        </div>
+                        <div className='main-comprando-container'>
+                            <div className='calendar-container'>
+                                <Dropdowndept />
+                                <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
+                            </div>
+                            <SubirArchivos />
+                            <button onClick={handleClick}>Enviar</button>
+                            <button>Cancelar</button>
+                        </div>
                     </Content>
                 </Layout>
             </>
@@ -85,10 +98,20 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                         <MenuProveedor/>
                     </Header>
                     <Content>
-                        <Calendario  getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
-                        <SubirArchivos />
-                        <button onClick={handleClick}>Enviar</button>
-                        <button>Cancelar</button>
+                        <h1 className='h1-welcome'>Comprando</h1>
+                        <div className='blue-container'>
+                            <img src={icon} className='icon-medium'></img>
+                            <p className='text-blue' >Has elegido el Super Banner Central</p>
+                        </div>
+                        <div className='main-comprando-container'>
+                            <div className='calendar-container'>
+                                <Dropdowndept />
+                                <Calendario  getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
+                            </div>
+                            <SubirArchivos />
+                            <button onClick={handleClick}>Enviar</button>
+                            <button>Cancelar</button>
+                        </div>
                     </Content>
                 </Layout>
             </>
@@ -101,10 +124,20 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                         <MenuProveedor/>
                     </Header>
                     <Content>
-                        <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
-                        <SubirArchivos />
-                        <button onClick={handleClick}>Enviar</button>
-                        <button>Cancelar</button>
+                        <h1 className='h1-welcome'>Comprando</h1>
+                        <div className='blue-container'>
+                            <img src={icon} className='icon-medium'></img>
+                            <p className='text-blue'>Has elegido el Banner Central</p>
+                        </div>
+                        <div className='main-comprando-container'>
+                            <div className='calendar-container'>
+                                <Dropdowndept />
+                                <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
+                            </div>
+                            <SubirArchivos />
+                            <button onClick={handleClick}>Enviar</button>
+                            <button>Cancelar</button>
+                        </div>
                     </Content>
                 </Layout>
             </>
@@ -117,10 +150,20 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                         <MenuProveedor/>
                     </Header>
                     <Content>
-                        <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
-                        <SubirArchivos />
-                        <button onClick={handleClick}>Enviar</button>
-                        <button>Cancelar</button>
+                        <h1 className='h1-welcome'>Comprando</h1>
+                        <div className='blue-container'>
+                            <img src={icon} className='icon-medium'></img>
+                            <p className='text-blue'>Has elegido el Banner Central Departamento</p>
+                        </div>
+                        <div className='main-comprando-container'>
+                            <div className='calendar-container'>
+                                <Dropdowndept />
+                                <Calendario getInitialState={getInitialState} setGetInitialState={setGetInitialState}/>
+                            </div>
+                            <SubirArchivos />
+                            <button onClick={handleClick}>Enviar</button>
+                            <button>Cancelar</button>
+                        </div>
                     </Content>
                 </Layout>
             </>

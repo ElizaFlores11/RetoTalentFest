@@ -5,7 +5,7 @@ import "react-day-picker/lib/style.css";
 
 const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
 
-  numberOfMonths=3
+  numberOfMonths=1
   
   const handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, getInitialState);
@@ -24,21 +24,23 @@ const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
   console.log(getInitialState)
   
   return (
-    <div className="RangeExample">
-        <h3>Selecciona la fecha de publicación:</h3>
-      <p>
-        {!from && !to && "Please select the first day."}
-        {from && !to && "Please select the last day."}
+    <div className="calendar-info-container">
+      <div className='text-calendario'>
+        <h3 className='p-text'>Selecciona la fecha de publicación:</h3>
+      <p className='p-text'>
+        {!from && !to && "Fecha de inicio"}
+        {from && !to && "Fecha de finalización"}
         {from &&
           to &&
-          `Selected from ${from.toLocaleDateString()} to
+          `Del día: ${from.toLocaleDateString()} al día:
                 ${to.toLocaleDateString()}`}{" "}
         {from && to && (
           <button className="link" onClick={handleResetClick}>
-            Reset
+            Borrar
           </button>
         )}
       </p>
+      </div>
       <DayPicker
         className="Selectable"
         numberOfMonths={numberOfMonths}
