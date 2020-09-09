@@ -1,5 +1,5 @@
 import React from 'react';
-import Boton from '../Boton/Boton'
+
 
 
 const CampañaLista = ()=> {
@@ -8,8 +8,8 @@ const CampañaLista = ()=> {
             <h1>TU CAMPAÑA ESTA LISTA!</h1>
             <div>
                 <p>Tu campaña estará lista a partir del día ..., Gracias por ser parte del Walmart!</p>
-                <Boton>Listo</Boton>
-                <Boton>Comprar otra campaña</Boton>
+                <button>Finalizar</button>
+                <button>Comprar otra campaña</button>
             </div>
         </div>
     )
