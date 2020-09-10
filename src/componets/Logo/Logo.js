@@ -1,8 +1,14 @@
 import React  from 'react';
+import { useHistory } from 'react-router-dom'
 import logo from '../assets/walmart.png'
 import logoBlanco from '../assets/walmartBlanco.png'
 
 const Logo = ({small = false, big = false, login=false})=> {
+    let history = useHistory()
+    function handleClick() {
+
+        history.push('/HomeProveedor')
+    }
 
     let src = logo
     let alt = 'small'
@@ -33,7 +39,7 @@ const Logo = ({small = false, big = false, login=false})=> {
 
     return(
         <div className='logo-container'>
-            <img id={small? 'small-logo': 'big-logo'}src={src} style={style} alt={alt} className={classNam}></img>
+            <img id={small? 'small-logo': 'big-logo'}src={src} style={style} alt={alt} className={classNam} onClick={handleClick}></img>
         </div>
     )
 }

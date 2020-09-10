@@ -41,6 +41,9 @@ const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
           </button>
         )}
       </p>
+      <div className='flexi'>
+        <div className='circle'></div><p className='p-text'>Fechas NO disponibles</p>
+      </div>
       </div>
       <DayPicker
         className="Selectable"
@@ -48,6 +51,20 @@ const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
         selectedDays={[from, { from, to }]}
         modifiers={modifiers}
         onDayClick={handleDayClick}
+        disabledDays={[
+          {
+            after: new Date(2020, 8, 20),
+            before: new Date(2020, 8, 25),
+          },
+          {
+            after: new Date(2020, 8, 11),
+            before: new Date(2020, 8, 14),
+          },
+          {
+            after: new Date(2020, 9, 1),
+            before: new Date(2020, 9, 20),
+          },
+        ]}
       />
       <Helmet>
         <style>{`
