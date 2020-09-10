@@ -91,7 +91,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
         from: undefined,
         to: undefined
       });
-      const [proveedor, setProveedor] = useState("proveedor")
+      const [proveedor, setProveedor] = useState("Fisher-Price")
     /*funciones de Departamento */
     const [depto, setDepto] = useState(null)
     const onChangeDepto = (value)=> {
