@@ -1,4 +1,4 @@
-import React, {usestáte, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {firebase, db} from '../../firebase/configFirebase';  
 import { useHistory, Link } from 'react-router-dom'
 import { Row, Col, Layout} from 'antd';
@@ -15,7 +15,7 @@ let superBanner = [
             icon:'../assets/iconDescr.png'
         },
         ventaja:{
-            texto:'La ventaja de contratar está campaña es que estárás visible en el momento que nuestros clientes ingresen a la página.',
+            texto:'La ventaja de contratar esta campaña es que estarás visible en el momento que nuestros clientes ingresen a la página.',
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
@@ -36,7 +36,7 @@ let superBanner = [
             icon:'../assets/iconDescr.png'
         },
         ventaja:{
-            texto:'La ventaja de contratar está campaña es que cuando nuestro cliente de click sera diseccionado a una sección especial donde visualizara unicamente tus productos',
+            texto:'La ventaja de contratar esta campaña es que cuando nuestro cliente de click sera diseccionado a una sección especial donde visualizara unicamente tus productos',
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
@@ -100,7 +100,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
     //const user = firebase.auth().currentUser;
     const  uid = 'q9R1VgxL0DfgfMY0KoKYhi3isw52'  
     //console.log(user); 
-      const [usuario, setUsuario] = usestáte([]);
+      const [usuario, setUsuario] = useState([]);
       useEffect(() => {
        const goUser = db.collection('users').where('uid', '==', uid );
        return goUser.onSnapshot(snapshotReady => {

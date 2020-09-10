@@ -77,7 +77,7 @@ const Aprobacion = () =>{
                         <ul>
                             <li>Tu campaña esta siendo revisada por el equipo de diseño, para verificar que tus archivos sean los más optimos para tu campaña.</li>
                             <li>En las proximas 24 horas recibiras una notificación donde se te indicara si tu campaña ha sido aprobada o reuiqere modificaciones.</li>
-                            <li>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo</li>
+                            <li>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedará liberado el espacio y tendrás que iniciar el proceso de nuevo</li>
                         </ul>
                     </div>
                     <div>
@@ -173,7 +173,7 @@ const Aprobacion = () =>{
                         <ul>
                             <li>Tu campaña está siendo revisada por el equipo de diseño, para verificar que tus archivos sean los más optimos para tu campaña.</li>
                             <li>En las proximas 24 horas recibiras una notificación donde se te indicara si tu campaña ha sido aprobada o reuiqere modificaciones.</li>
-                            <li>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo</li>
+                            <li>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedará liberado el espacio y tendrás que iniciar el proceso de nuevo</li>
                         </ul>
                     </div>
                     </div>

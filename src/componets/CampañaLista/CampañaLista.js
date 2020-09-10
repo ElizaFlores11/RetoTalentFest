@@ -42,9 +42,9 @@ const CampañaLista = ()=> {
             >
         <div className='modal-container'>
             <img src={pasos} alt="Completado" style={{width: '140px'}} className='icon-last' /> 
-            <h1 className='listo'>Listo!</h1 >
-            <p className='text-listo'>Tu campaña está lista para el día 13 de septiembre 2020</p>
-            <p className='tnks'>Gracias por ser parte de Walmart!</p>
+            <h1 className='listo'>¡Listo!</h1 >
+            <p className='text-listo'>Tu campaña está lista para el día 14 de septiembre 2020</p>
+            <p className='tnks'>¡Gracias por ser parte de Walmart!</p>
             <div className='listo-container-btn'>
                 <button className='send-btn-listo' onClick={handleHome}>Listo</button>   
                 <button className='yellow-btn' onClick={handleDetalles}>+ Agregar espacios Disponibles</button></div>
