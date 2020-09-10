@@ -1,5 +1,6 @@
 # Reto Walmart
 
+https://app.creately.com/diagram/aeW4OduisDJ/view
 
 ## Sobre el negocio
 
