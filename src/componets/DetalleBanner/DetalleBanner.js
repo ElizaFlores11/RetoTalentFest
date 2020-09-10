@@ -19,7 +19,7 @@ let superBanner = [
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
-            texto:'Ubicación: parte superior de la página.Medidas de 728×293 pixeles. El peso de la imagen sera de máximo 25mb. En un formato editable.',
+            texto:'Ubicación: parte superior de la página.Medidas de 728×293 pixeles. El peso de la imagen será de máximo 25mb. En un formato editable.',
             icon:'../assets/iconUbi.png'
         },
         costo:{
@@ -36,11 +36,11 @@ let superBanner = [
             icon:'../assets/iconDescr.png'
         },
         ventaja:{
-            texto:'La ventaja de contratar esta campaña es que cuando nuestro cliente de click sera diseccionado a una sección especial donde visualizara unicamente tus productos',
+            texto:'La ventaja de contratar esta campaña es que cuando nuestro cliente de click sera diseccionado a una sección especial donde visualizará únicamente tus productos',
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
-            texto:'Ubicación: a la mitad de la página web. Medidas de 728×293 pixeles. El peso de la imagen sera de máximo. En un formato editable.',
+            texto:'Ubicación: a la mitad de la página web. Medidas de 728×293 pixeles. El peso de la imagen será de máximo. En un formato editable.',
             icon:'../assets/iconUbi.png'
         },
         costo:{
@@ -63,7 +63,7 @@ let banner = [
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
-            texto:'Ubicación: parte central de la página. Medidas de 728×90 pixeles. El peso de la imagen sera de máximo. En un formato editable.',
+            texto:'Ubicación: parte central de la página. Medidas de 728×90 pixeles. El peso de la imagen será de máximo. En un formato editable.',
             icon:'../assets/iconUbi.png'
         },
         costo:{
@@ -80,11 +80,11 @@ let banner = [
             icon:'../assets/iconDescr.png'
         },
         ventaja:{
-            texto:'La ventaja de elegir este formato es que cuando nuestro cliente ingrese a el departamento, podra dar click y sera dirigido a una sección especial con los productos de tu marca disponibles en la tienda.',
+            texto:'La ventaja de elegir este formato es que cuando nuestro cliente ingrese a el departamento, podra dar click y será dirigido a una sección especial con los productos de tu marca disponibles en la tienda.',
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
-            texto:'Ubicación: parte central de la página. Medidas de 728×90 píxeles. El peso de la imagen sera de máximo. En un formato editable.',
+            texto:'Ubicación: parte central de la página. Medidas de 728×90 píxeles. El peso de la imagen será de máximo. En un formato editable.',
             icon:'../assets/iconUbi.png'
         },
         costo:{

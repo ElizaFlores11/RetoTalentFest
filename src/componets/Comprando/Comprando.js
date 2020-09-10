@@ -310,7 +310,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 <h1 className='recuerda'>Recuerda:</h1>
                                 <p>Una vez enviado, espera la confirmación de aprobación, a través de una notificación en tu home.</p>
                                 <p>Una vez aprobada tu campaña, deberás continuar con el proceso de pago, muchas gracias por tu confianza.</p>
-                                <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>
+                                <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedará liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>
                                 </div>   
                             </div>
                             <div className='div-btn-comprando'> 
@@ -402,7 +402,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 <h1 className='recuerda'>Recuerda:</h1>
                                 <p>Una vez enviado, espera la confirmación de aprobación, a través de una notificación en tu home.</p>
                                 <p>Una vez aprobada tu campaña, deberás continuar con el proceso de pago, muchas gracias por tu confianza.</p>
-                                <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>
+                                <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedará liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>
                                 </div>   
                             </div>
                             <div className='div-btn-comprando'>
