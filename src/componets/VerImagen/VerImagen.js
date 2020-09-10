@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Imagen from './Imagen'; 
-import {firebase, db} from '../../firebase/configFirebase';
+import {db} from '../../firebase/configFirebase';
 
 const Issues = () =>{
     const [imagen, setImagen] = useState([]);
@@ -9,7 +9,6 @@ const Issues = () =>{
         return goInfo.onSnapshot(snapshotInfo => {
           const infoData = []
           snapshotInfo.forEach(doc => infoData.push({ ...doc.data(), id: doc.id }));
-          //console.log(goDetalle); 
           setImagen(infoData);
         });
       }, []);

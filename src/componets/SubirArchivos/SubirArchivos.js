@@ -4,7 +4,7 @@ import FileUploader from "react-firebase-file-uploader";
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import VerImagen from "../VerImagen/VerImagen"
 import icon from '../assets/pasos2.png'
-import '../../styles/aprobacion.scss'
+import '../../styles/comprando.scss'
 require("firebase/storage");
 const SubirArchivos = () =>{
     const [state, setState] = useState({
@@ -78,7 +78,6 @@ const SubirArchivos = () =>{
         </div>
         <button className='btn-upload-files' style={{width:160, height: 50, backgroundColor: '#FDBB2F',}}>Cargar
         <FileUploader
-          
           accept="image/*"
           name="image-uploader-multiple"
           //randomizeFilename
@@ -94,7 +93,7 @@ const SubirArchivos = () =>{
         </button> 
         </div>
         <div className='remember-container'>
-          <h1>Recuerda:</h1>
+          <h1 className='recuerda'>Recuerda:</h1>
           <p>Una vez enviado, espera la confirmación de aprobación, a través de una notificación en tu home.</p>
           <p>Una vez aprobada tu campaña, deberás continuar con el proceso de pago, muchas gracias por tu confianza.</p>
           <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>

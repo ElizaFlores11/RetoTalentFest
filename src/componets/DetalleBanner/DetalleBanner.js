@@ -1,10 +1,12 @@
-import React from 'react';
-import { useHistory,Link } from 'react-router-dom'
-import { Row, Col} from 'antd';
+import React, {useState, useEffect} from 'react';
+import {firebase, db} from '../../firebase/configFirebase';  
+import { useHistory, Link } from 'react-router-dom'
+import { Row, Col, Layout} from 'antd';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 
 import '../../styles/detalleBanner.scss'
-
+require('firebase/auth')
+const { Header, Content } = Layout;
 let superBanner = [
     {
         id: 'superBanner',
@@ -95,8 +97,20 @@ let banner = [
 ]
 
 const DetalleBanner = ({sBanner, ban}) =>{
+    //const user = firebase.auth().currentUser;
+    const  uid = 'q9R1VgxL0DfgfMY0KoKYhi3isw52'  
+    //console.log(user); 
+      const [usuario, setUsuario] = useState([]);
+      useEffect(() => {
+       const goUser = db.collection('users').where('uid', '==', uid );
+       return goUser.onSnapshot(snapshotReady => {
+         const userData = []
+         snapshotReady.forEach(doc => userData.push({ ...doc.data(), id: doc.id }));
+         setUsuario(userData);
+      });
+     }, []);  
+  
     let history = useHistory()
-
     function regresar() {
 
         history.push('/HomeProveedor')
@@ -108,53 +122,59 @@ const DetalleBanner = ({sBanner, ban}) =>{
     if(sBanner){
         return(
             <>
-            <MenuProveedor />
-            <h1 className='h1-welcome'>Super Banner</h1>
-            {superBanner.map(ban=>              
+            <Layout>
+                <Header>
+                    <MenuProveedor />
+                </Header>
+                <h1 className='h1-welcome'>Super Banner</h1>
+                {superBanner.map(ban=>              
                 <div className='detail-blue-container'>
                     
                     <Row justify="space-around" align="bottom">
                     <Col span={12}>
                         <div className='detail-img-container'>
-                            <img src={ban.img} key={ban.id} className='banner-detail-img'></img>
+                            <img src={ban.img} key={ban.id} className='banner-detail-img' alt="banner1"></img>
                         </div>                        
                     </Col>
                     <Col span={12}>
                         <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id} alt="banner2"></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id} alt="banner3"></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id} alt="banner4"></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner5"></img>
                             <div>{ban.costo.texto}</div>
                         </div>
                         </div>
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
+
+                    <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button> </Link>
                     </div>
                 </div>
             )}
             <div className='detail-btn-regresar-cont'>  
                 <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
             </div>
-            
+            </Layout>
             </>
         )
     } else if (ban){
         return(
             <>
-                <MenuProveedor />
+            <Layout>
+                <Header>
+                <MenuProveedor /></Header>
                 <h1 className='h1-welcome'>Banner</h1>
                 {banner.map(ban=>
                     <div className='detail-blue-container'>
@@ -162,25 +182,25 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     <Row justify="space-around" align="bottom">
                     <Col  span={12}>
                         <div className='detail-img-container'>
-                            <img className='icon' src={ban.img} key={ban.id} className='banner-detail-img'></img>
+                            <img className='icon' src={ban.img} key={ban.id} className='banner-detail-img' alt="banner6"></img>
                         </div>                        
                     </Col>
                     <Col  span={12}>
                         <div className='detail-container'>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.descripción.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.descripción.icon} key={ban.id} alt="banner7"></img>
                             <div>{ban.descripción.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ventaja.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ventaja.icon} key={ban.id} alt="banner8"></img>
                             <div>{ban.ventaja.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.ubicación.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.ubicación.icon} key={ban.id} alt="banner9"></img>
                             <div>{ban.ubicación.texto}</div>
                         </div>
                         <div className='details-flex-container'>
-                            <img className='icon' src={ban.costo.icon} key={ban.id}></img>
+                            <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner10"></img>
                             <div>{ban.costo.texto}</div>
                         </div>
                         </div>
@@ -194,6 +214,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                 <div className='detail-btn-regresar-cont'>  
                     <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
                 </div>
+            </Layout>
             </>
         )
     }

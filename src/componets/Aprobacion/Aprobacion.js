@@ -7,22 +7,25 @@ import SubirArchivos from '../SubirArchivos/SubirArchivos'
 import VerImagen from '../VerImagen/VerImagen'
 import Logo from '../Logo/Logo'
 import iconApr from '../assets/pasosAprob.png'
+import iconCheck from '../assets/pasos5.png'
 import DatosCuenta from '../Datosdecuenta/Datoscuenta';
+import CampañaLista from '../CampañaLista/CampañaLista'
+import '../../styles/aprobacion.scss'
 
 
 const { Header, Content } = Layout;
 
 const Aprobacion = () =>{
-    // let history = useHistory()
+    let history = useHistory()
 
-    // function handleClick() {
+    function handleClick() {
 
-    //     history.push('/Completado')
-    // }
+        history.push('/Completado')
+    }
     const [aprobacion, getAprobacion]= useState();
 
     const getData = async () => {
-        let contrato = db.collection('contratopublicidad').doc('fUqzI3yh6abNcoWF8dSZ')
+        let contrato = db.collection('contratopublicidad').doc('Fl0agXgVrfWKscHhDehT')
         contrato.get().then((doc)=>{
             if(doc.exists){
                 getAprobacion({...doc.data()})
@@ -35,8 +38,14 @@ const Aprobacion = () =>{
     useEffect(()=>{
         getData()
     },[])
-    console.log(aprobacion)
-
+    //console.log(aprobacion.fechafinal);
+   //console.log(aprobacion.fechafinal);
+    /*const datef = new Date(ff*1000);
+            const mesf = datef.getMonth()+1; 
+            const diaf = datef.getDate(); 
+            const anyof = datef.getYear() - 69;
+            const datefinal = diaf + '/' + mesf + '/' + anyof;
+            console.log(datefinal)*/
     if(aprobacion?.aprobacion==='pendiente'){
         return(
             <>
@@ -53,11 +62,11 @@ const Aprobacion = () =>{
                             <img src={iconApr} className='icon-medium'></img>
                             <div>
                                 <ul>
-                                    <li className='aprob-info'>Proveedor:</li>
-                                    <li className='aprob-info'>Tipo de campaña:</li>
-                                    <li className='aprob-info'>Donde aparecerá:</li>
-                                    <li className='aprob-info'>Fecha de inicio:</li>
-                                    <li className='aprob-info'>Fecha de finalización:</li>
+                                    <li className='aprob-info'>Proveedor: {aprobacion.proveedor}</li>
+                                    <li className='aprob-info'>Tipo de campaña: {aprobacion.tipo}</li>
+                                    <li className='aprob-info'>Donde aparecerá: {aprobacion.departamento}</li>
+                                    <li className='aprob-info'>Fecha de inicio: 9/09/2020</li>
+                                    <li className='aprob-info'>Fecha de finalización: 17/09/2020</li>
                                     <li className='aprob-info'>Costo:</li>
                                 </ul>
                             </div> 
@@ -92,32 +101,33 @@ const Aprobacion = () =>{
                     <MenuProveedor/>
                 </Header>
                 <Content>
-                    <h1 className='h1-welcome'>Tu campaña ha sido aprobada C:</h1>
+                    <h1 className='h1-welcome'>Tu campaña ha sido aprobada</h1>
                     <div className='aprobacion-blue-container'>
-                        <p className='text-blue'>Información de tu campaña</p>
-                        <div className='blue-container'>
-                            <img src={iconApr} className='icon-medium'></img>
+                        <p className='aprob-text-blue'>Información de tu campaña</p>
+                        <div className='aprob-blue-container'>
+                            <img src={iconCheck} className='icon-medium'></img>
                             <div>
                                 <ul>
-                                    <li className='aprob-info'>Proveedor:</li>
-                                    <li className='aprob-info'>Tipo de campaña:</li>
-                                    <li className='aprob-info'>Donde aparecerá:</li>
-                                    <li className='aprob-info'>Fecha de inicio:</li>
-                                    <li className='aprob-info'>Fecha de finalización:</li>
+                                    <li className='aprob-info'>Proveedor: {aprobacion.proveedor}</li>
+                                    <li className='aprob-info'>Tipo de campaña: {aprobacion.tipo}</li>
+                                    <li className='aprob-info'>Donde aparecerá: {aprobacion.departamento}</li>
+                                    <li className='aprob-info'>Fecha de inicio: 9/09/2020</li>
+                                    <li className='aprob-info'>Fecha de finalización: 17/09/2020</li>
                                     <li className='aprob-info'>Costo:</li>
                                 </ul>
                             </div> 
                         </div>               
                     </div>
                     <div>
-                        <p>Tu campaña se vera así:</p>
-                        <VerImagen />
+                        <p className='title-aprob'>Tu campaña se vera así:</p>
+                        <img src={aprobacion.urlimg} alt={aprobacion.nameimg} style={{width: 900, height: 'auto'}} className='img-campaña'/>
                     </div>
                     <div>
-                        <p>Para finalizar el proceso de contratación, ingresa tus datos de cuenta para realizar el pago correspondiente.</p>
+                        <p className='text-aprob'>Para finalizar el proceso de contratación, ingresa tus datos de cuenta para realizar el pago correspondiente.</p>
                         <DatosCuenta />
-                        <button>Comprar</button>
-                        <button>Cancelar</button>
+                    <div className='btn-modal-div'>
+                        <CampañaLista />
+                        <button className='cancel-btn'>Cancelar</button></div>
                     </div>
                 </Content>
     
@@ -132,21 +142,21 @@ const Aprobacion = () =>{
                     <MenuProveedor/>
                 </Header>
                 <Content>
-                    <h1 className='h1-welcome'>Tu campaña requiere ser modificada</h1>
+                    <h1 className='h1-welcome'>Tu campaña requiere ser revisada</h1>
                     <div className='aprobacion-blue-container'>
-                        <p className='text-blue'>Información de tu campaña</p>
-                        <div className='blue-container'>
-                        <img src={iconApr} className='icon-medium'></img>
-                        <div>
-                            <ul>
-                                <li className='aprob-info'>Proveedor:</li>
-                                <li className='aprob-info'>Tipo de campaña:</li>
-                                <li className='aprob-info'>Donde aparecerá:</li>
-                                <li className='aprob-info'>Fecha de inicio:</li>
-                                <li className='aprob-info'>Fecha de finalización:</li>
-                                <li className='aprob-info'>Costo:</li>
-                            </ul>
-                        </div> 
+                        <p className='aprob-text-blue'>Información de tu campaña</p>
+                        <div className='aprob-blue-container'>
+                            <img src={iconApr} className='icon-medium'></img>
+                            <div>
+                                <ul>
+                                    <li className='aprob-info'>Proveedor: {aprobacion.proveedor}</li>
+                                    <li className='aprob-info'>Tipo de campaña: {aprobacion.tipo}</li>
+                                    <li className='aprob-info'>Donde aparecerá: {aprobacion.departamento}</li>
+                                    <li className='aprob-info'>Fecha de inicio: 9/09/2020</li>
+                                    <li className='aprob-info'>Fecha de finalización: 17/09/2020</li>
+                                    <li className='aprob-info'>Costo:</li>
+                                </ul>
+                            </div> 
                         </div>               
                     </div>
                     <div>

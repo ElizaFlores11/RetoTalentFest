@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { Link, BrowserRouter } from "react-router-dom";
+import React from 'react'
+import { Link } from "react-router-dom";
 import  {Menu} from 'antd';
 import Logo from '../Logo/Logo';
 import {
@@ -7,24 +7,10 @@ import {
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
-import {firebase} from '../../firebase/configFirebase';
 require("firebase/auth");
 
 const MenuProveedor = () =>{
 
-
-// const logout = () => ('click', (e) => {
-//         e.preventDefault();
-//         firebase.auth.signOut().then(() => {
-//           window.location.hash = '#/';
-//         });
-//       });
-
-  
-
-
-
-    
     return (
           <Menu mode="horizontal" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<UserOutlined />}>
@@ -32,8 +18,7 @@ const MenuProveedor = () =>{
             </Menu.Item>
             <Menu.Item key="2" icon={<VideoCameraOutlined />}>
               nav 2
-            </Menu.Item>
-           
+            </Menu.Item>           
             <Menu.Item key="3" icon={<UploadOutlined />} > 
             <Link to='/'>
                 Salir 

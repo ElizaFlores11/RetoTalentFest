@@ -1,5 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
+
 const firebaseConfig = {
     apiKey: "AIzaSyDYWjcUH4_3rp68TBX6j10Aq-y7ObRvSwo",
     authDomain: "publicidad-walmart.firebaseapp.com",
@@ -15,3 +17,4 @@ const firebaseConfig = {
 
   export  {firebase}
   export const db = firebase.firestore();
+  
