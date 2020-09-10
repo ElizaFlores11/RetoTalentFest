@@ -83,3 +83,10 @@ https://publicidad-walmart.web.app/
 - React router dom.
 - React-day-picker( Dependecias extra para implementación de calendario).
 - React-firebase-file-uploader ( Dependecias extra para implementación de subir imagenes).
+
+
+### Integrantes de desarrollo 
+- Mariel E. Carrillo Moreno  Front End Developer
+- Abigail Sánchez López      Front End Developer
+- Elizabeth Flores Guillen   Front End Developer
+- Karen Flores Nava          UX Designer
