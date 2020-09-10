@@ -47,7 +47,7 @@ Con el fin de mejorar la gestión y experiencia de usuarios, se pretende crear u
 
 ## Diagrama de  flujo
 
-<img src="imgReadme/sketch.png" alt="Walmart">
+<img src="imgReadme/diagrama.jog" alt="Walmart">
 
 ## Ideación
 
@@ -69,5 +69,7 @@ https://www.figma.com/file/fd8F5gbFM5YxUYfNjDTmU3/Walmart-con-Laboratoria?node-i
 ## Solución
 
 ### Deploy
+
+https://publicidad-walmart.web.app/
 
 
