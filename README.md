@@ -43,22 +43,24 @@ Con el fin de mejorar la gestión y experiencia de usuarios, se pretende crear u
 - Se pueda realizar la selección y compra del espacio publicitario.
 - El usuario interno pueda acceder por medio de una cuenta.
 - El usuario interno pueda dar de alta o baja las campañas contratadas.
-- El usuario interno pueda consultar los espacios activos y los que están en proceso de activación
+- El usuario interno pueda consultar los espacios activos y los que están en proceso de activación.
 
 ## Diagrama de  flujo
 
-<img src="imgReadme/diagrama.jog" alt="Walmart">
+<img src="imgReadme/diagrama.jpg" alt="Walmart">
+
+
 
 ## Ideación
 
-Al iniciar la conversacion con el equipo de Walmart se logro visualizar, cuales eran las principales necesidades del proyecto, se identificaron las distintas problematica en el proceso actual y en base a las respuestas se realizo una lluvia de ideas de posibles flujos, se realizaron sketchs con distintas propuestas
+Al iniciar la conversacion con el equipo de Walmart se logro visualizar, cuales eran las principales necesidades del proyecto, se identificaron las distintas problematica en el proceso actual y en base a las respuestas se realizo una lluvia de ideas de posibles flujos, se realizaron sketchs con distintas propuestas.
 
 ## Sketch
 <img src="imgReadme/sketch.png" alt="walmart">
 
 ## WireFrame
 
-### Liga de prototioo de baja.
+### Liga de prototipo de baja.
 
 https://www.figma.com/file/fd8F5gbFM5YxUYfNjDTmU3/Walmart-con-Laboratoria?node-id=0%3A1
 
@@ -73,3 +75,10 @@ https://www.figma.com/file/fd8F5gbFM5YxUYfNjDTmU3/Walmart-con-Laboratoria?node-i
 https://publicidad-walmart.web.app/
 
 
+## Herramientas utilizadas
+- Libreria React.
+- Ant desing.
+- Sass.
+- React router dom.
+- React-day-picker( Dependecias extra para implementación de calendario).
+- React-firebase-file-uploader ( Dependecias extra para implementación de subir imagenes).
