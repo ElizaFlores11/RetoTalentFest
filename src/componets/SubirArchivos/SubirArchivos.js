@@ -4,7 +4,7 @@ import FileUploader from "react-firebase-file-uploader";
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import VerImagen from "../VerImagen/VerImagen"
 import icon from '../assets/pasos2.png'
-import '../../styles/comprando.scss'
+import '../../styles/aprobacion.scss'
 require("firebase/storage");
 const SubirArchivos = () =>{
     const [state, setState] = useState({

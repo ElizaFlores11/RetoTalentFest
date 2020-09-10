@@ -22,7 +22,7 @@ const Aprobacion = () =>{
     const [aprobacion, getAprobacion]= useState();
 
     const getData = async () => {
-        let contrato = db.collection('contratopublicidad').doc('Fl0agXgVrfWKscHhDehT')
+        let contrato = db.collection('contratopublicidad').doc('fUqzI3yh6abNcoWF8dSZ')
         contrato.get().then((doc)=>{
             if(doc.exists){
                 getAprobacion({...doc.data()})
@@ -45,22 +45,25 @@ const Aprobacion = () =>{
                     <MenuProveedor/>
                 </Header>
                 <Content>
+                    <div className='full-box-aprob'>
                     <h1 className='h1-welcome'>Tu campaña está siendo revisada</h1>
                     <div className='aprobacion-blue-container'>
-                        <p className='text-blue'>Información de tu campaña</p>
-                        <div className='blue-container'>
+                        <p className='aprob-text-blue'>Información de tu campaña</p>
+                        <div className='aprob-blue-container'>
                             <img src={iconApr} className='icon-medium'></img>
                             <div>
-                                <p>Proveedor:</p>
-                                <p>Tipo de campaña:</p>
-                                <p>Donde aparecerá:</p>
-                                <p>Fecha de inicio:</p>
-                                <p>Fecha de finalización:</p>
-                                <p>Costo:</p>
+                                <ul>
+                                    <li className='aprob-info'>Proveedor:</li>
+                                    <li className='aprob-info'>Tipo de campaña:</li>
+                                    <li className='aprob-info'>Donde aparecerá:</li>
+                                    <li className='aprob-info'>Fecha de inicio:</li>
+                                    <li className='aprob-info'>Fecha de finalización:</li>
+                                    <li className='aprob-info'>Costo:</li>
+                                </ul>
                             </div> 
                         </div>               
                     </div>
-                    <div>
+                    <div className='aprob-remember'>
                         <p>Recuerda</p>
                         <ul>
                             <li>Tu campaña esta siendo revisada por el equipo de diseño, para verificar que tus archivos sean los más optimos para tu campaña.</li>
@@ -69,11 +72,12 @@ const Aprobacion = () =>{
                         </ul>
                     </div>
                     <div>
-                        <h1>Gracias por tu confianza</h1>
-                        <div>
+                        <h1 className='aprob-txt-tnks'>Gracias por tu confianza</h1>
+                        <div className='container-logo-apr'>
                             <Logo big />
                         </div>
-                        <button>Entendido</button>
+                        <button className='aprob-btn'>Entendido</button>
+                    </div>
                     </div>
                 </Content>
     
@@ -94,12 +98,14 @@ const Aprobacion = () =>{
                         <div className='blue-container'>
                             <img src={iconApr} className='icon-medium'></img>
                             <div>
-                                <p>Proveedor:</p>
-                                <p>Tipo de campaña:</p>
-                                <p>Donde aparecerá:</p>
-                                <p>Fecha de inicio:</p>
-                                <p>Fecha de finalización:</p>
-                                <p>Costo:</p>
+                                <ul>
+                                    <li className='aprob-info'>Proveedor:</li>
+                                    <li className='aprob-info'>Tipo de campaña:</li>
+                                    <li className='aprob-info'>Donde aparecerá:</li>
+                                    <li className='aprob-info'>Fecha de inicio:</li>
+                                    <li className='aprob-info'>Fecha de finalización:</li>
+                                    <li className='aprob-info'>Costo:</li>
+                                </ul>
                             </div> 
                         </div>               
                     </div>
@@ -132,12 +138,14 @@ const Aprobacion = () =>{
                         <div className='blue-container'>
                         <img src={iconApr} className='icon-medium'></img>
                         <div>
-                            <p>Proveedor:</p>
-                            <p>Tipo de campaña:</p>
-                            <p>Donde aparecerá:</p>
-                            <p>Fecha de inicio:</p>
-                            <p>Fecha de finalización:</p>
-                            <p>Costo:</p>
+                            <ul>
+                                <li className='aprob-info'>Proveedor:</li>
+                                <li className='aprob-info'>Tipo de campaña:</li>
+                                <li className='aprob-info'>Donde aparecerá:</li>
+                                <li className='aprob-info'>Fecha de inicio:</li>
+                                <li className='aprob-info'>Fecha de finalización:</li>
+                                <li className='aprob-info'>Costo:</li>
+                            </ul>
                         </div> 
                         </div>               
                     </div>
