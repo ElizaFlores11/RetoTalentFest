@@ -7,10 +7,10 @@ import '../../styles/login.scss'
 const Login = () =>{
     return ( 
       <>
-        <div className='header-nav'>         
-          <Logo small />          
+        <div className='header-nav' >         
+          <Logo login />          
         </div> 
-        <div className="toprow">
+        <div className="toprow" id='swing-in-top-fwd'>
           <Row>  
             <Col className="stylerow" xs={{ span: 12, offset: 1 }} lg={{ span: 6, offset: 2 }}>
               <Logo big />
