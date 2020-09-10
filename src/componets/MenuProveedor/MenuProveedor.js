@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import  {Menu} from 'antd';
 import Logo from '../Logo/Logo';
 import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
+  NotificationOutlined,
+  LineChartOutlined,
+  LogoutOutlined
 } from '@ant-design/icons';
 require("firebase/auth");
 
@@ -13,13 +13,13 @@ const MenuProveedor = () =>{
 
     return (
           <Menu mode="horizontal" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
+            <Menu.Item key="1" icon={<NotificationOutlined />}>
               nav 1
             </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
+            <Menu.Item key="2" icon={<LineChartOutlined />}>
               nav 2
             </Menu.Item>           
-            <Menu.Item key="3" icon={<UploadOutlined />} > 
+            <Menu.Item key="3" icon={<LogoutOutlined />} > 
             <Link to='/'>
                 Salir 
             </Link>            

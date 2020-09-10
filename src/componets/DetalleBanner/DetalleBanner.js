@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {firebase, db} from '../../firebase/configFirebase';  
 import { useHistory, Link } from 'react-router-dom'
-import { Row, Col} from 'antd';
+import { Row, Col, Layout} from 'antd';
 import MenuProveedor from  '../MenuProveedor/MenuProveedor'
 
 import '../../styles/detalleBanner.scss'
 require('firebase/auth')
-
+const { Header, Content } = Layout;
 let superBanner = [
     {
         id: 'superBanner',
@@ -122,9 +122,12 @@ const DetalleBanner = ({sBanner, ban}) =>{
     if(sBanner){
         return(
             <>
-            <MenuProveedor />
-            <h1 className='h1-welcome'>Super Banner</h1>
-            {superBanner.map(ban=>              
+            <Layout>
+                <Header>
+                    <MenuProveedor />
+                </Header>
+                <h1 className='h1-welcome'>Super Banner</h1>
+                {superBanner.map(ban=>              
                 <div className='detail-blue-container'>
                     
                     <Row justify="space-around" align="bottom">
@@ -163,13 +166,15 @@ const DetalleBanner = ({sBanner, ban}) =>{
             <div className='detail-btn-regresar-cont'>  
                 <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
             </div>
-            
+            </Layout>
             </>
         )
     } else if (ban){
         return(
             <>
-                <MenuProveedor />
+            <Layout>
+                <Header>
+                <MenuProveedor /></Header>
                 <h1 className='h1-welcome'>Banner</h1>
                 {banner.map(ban=>
                     <div className='detail-blue-container'>
@@ -202,13 +207,14 @@ const DetalleBanner = ({sBanner, ban}) =>{
                     </Col>
                     </Row>
                     <div className='detail-btn-comprar'>
-                        <button className='yellow-btn detail' onClick={handleClick}>Comprar</button>
+                    <Link to={`/Comprando/${ban.id}`}><button className='yellow-btn detail' onClick={handleClick}>Comprar</button></Link>
                     </div>
                 </div>
                 )}
                 <div className='detail-btn-regresar-cont'>  
                     <button className='detail-btn-regresar' onClick={regresar}>Regresar</button>
                 </div>
+            </Layout>
             </>
         )
     }

@@ -91,7 +91,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
         from: undefined,
         to: undefined
       });
-      const [proveedor, setProveedor] = useState("proveedor")
+      const [proveedor, setProveedor] = useState("Fisher-Price")
     /*funciones de Departamento */
     const [depto, setDepto] = useState(null)
     const onChangeDepto = (value)=> {
@@ -215,7 +215,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 </button> 
                                 </div>
                                 <div className='remember-container'>
-                                <h1>Recuerda:</h1>
+                                <h1 className='recuerda'>Recuerda:</h1>
                                 <p>Una vez enviado, espera la confirmación de aprobación, a través de una notificación en tu home.</p>
                                 <p>Una vez aprobada tu campaña, deberás continuar con el proceso de pago, muchas gracias por tu confianza.</p>
                                 <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>
@@ -307,7 +307,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 </button> 
                                 </div>
                                 <div className='remember-container'>
-                                <h1>Recuerda:</h1>
+                                <h1 className='recuerda'>Recuerda:</h1>
                                 <p>Una vez enviado, espera la confirmación de aprobación, a través de una notificación en tu home.</p>
                                 <p>Una vez aprobada tu campaña, deberás continuar con el proceso de pago, muchas gracias por tu confianza.</p>
                                 <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>
@@ -399,7 +399,7 @@ const Comprando= ({superBanner, sBannnerCentral, banner, bannerDpto})=> {
                                 </button> 
                                 </div>
                                 <div className='remember-container'>
-                                <h1>Recuerda:</h1>
+                                <h1 className='recuerda'>Recuerda:</h1>
                                 <p>Una vez enviado, espera la confirmación de aprobación, a través de una notificación en tu home.</p>
                                 <p>Una vez aprobada tu campaña, deberás continuar con el proceso de pago, muchas gracias por tu confianza.</p>
                                 <p>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo.</p>

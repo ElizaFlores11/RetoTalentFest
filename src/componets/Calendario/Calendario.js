@@ -2,10 +2,11 @@ import React  from "react";
 import Helmet from "react-helmet";
 import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
+import '../../styles/comprando.scss'
 
 const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
 
-  numberOfMonths=3
+  numberOfMonths=1
   
   const handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, getInitialState);
@@ -24,27 +25,46 @@ const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
   console.log(getInitialState)
   
   return (
-    <div className="RangeExample">
-        <h3>Selecciona la fecha de publicación:</h3>
-      <p>
-        {!from && !to && "Please select the first day."}
-        {from && !to && "Please select the last day."}
+    <div className="calendar-info-container">
+      <div className='text-calendario'>
+        <h3 className='p-text'>Selecciona la fecha de publicación:</h3>
+      <p className='p-text'>
+        {!from && !to && "Fecha de inicio"}
+        {from && !to && "Fecha de finalización"}
         {from &&
           to &&
-          `Selected from ${from.toLocaleDateString()} to
+          `Del día: ${from.toLocaleDateString()} al día:
                 ${to.toLocaleDateString()}`}{" "}
         {from && to && (
           <button className="link" onClick={handleResetClick}>
-            Reset
+            Borrar
           </button>
         )}
       </p>
+      <div className='flexi'>
+        <div className='circle'></div><p className='p-text'>Fechas NO disponibles</p>
+      </div>
+      </div>
       <DayPicker
         className="Selectable"
         numberOfMonths={numberOfMonths}
         selectedDays={[from, { from, to }]}
         modifiers={modifiers}
         onDayClick={handleDayClick}
+        disabledDays={[
+          {
+            after: new Date(2020, 8, 20),
+            before: new Date(2020, 8, 25),
+          },
+          {
+            after: new Date(2020, 8, 11),
+            before: new Date(2020, 8, 14),
+          },
+          {
+            after: new Date(2020, 9, 1),
+            before: new Date(2020, 9, 20),
+          },
+        ]}
       />
       <Helmet>
         <style>{`

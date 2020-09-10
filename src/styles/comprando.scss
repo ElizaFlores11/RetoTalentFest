@@ -16,8 +16,8 @@ $amarillo: #FDBB2F;
     margin: 40px 0;
 }
 .icon-medium{
-    width: 142px;
-    height: 142px;
+    width: 150px;
+    height: 150px;
 }
 .main-comprando-container{
     margin: 0 20%;
@@ -80,6 +80,7 @@ $amarillo: #FDBB2F;
     height: 250px;
     border: 2px solid #017DC3;
     margin: 27px 0;
+    padding: 20px 40px;
 }
 .btn-upload-files{
     font-family: 'Roboto';
@@ -88,7 +89,7 @@ $amarillo: #FDBB2F;
     text-align: center;
     border: none;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-    margin: 0 40%;
+    margin: 15px 40% 0;
     padding: 8px;
     z-index: 11;
 }
@@ -99,7 +100,7 @@ $amarillo: #FDBB2F;
     color: white;
     width: 305px;
     height:50px;
-    margin: 0 0 0;
+    margin: 0 auto;
     background: #017DC3;
     border: none;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
@@ -111,7 +112,7 @@ $amarillo: #FDBB2F;
     color: $azul;
     width: 305px;
     height:50px;
-    margin: 27px 0 27px;
+    margin: 27px auto 27px;
     border:  2px solid $azul;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
@@ -119,7 +120,35 @@ $amarillo: #FDBB2F;
     margin: 0% 30%;
 }
 [type~="file"]{
+    width: 160px;
     position: relative;
     z-index: 100;
-    margin-block-end: 30px;
+    margin-block-end: 50px;
+}
+.link{
+    width: 100px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 16pt;
+    text-align: center;
+    border: none;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    background: #FDBB2F;
+}
+.recuerda{
+    color: #017DC3;
+    font-weight: 500;
+    text-align: center;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px;
+    border-radius: 50%;
+    background: grey;
+}
+.flexi{
+    display: flex;
+    flex-direction: row;
 }
