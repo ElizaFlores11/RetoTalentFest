@@ -8,6 +8,7 @@ const CampañaLista = ()=> {
     const [state, setState] =  useState({visible: false})
     let history = useHistory()
     //  state = { visible: false };
+
     const showModal = () => {
         setState({
         visible: true,
