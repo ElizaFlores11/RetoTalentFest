@@ -23,7 +23,7 @@ let superBanner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$900.00 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -44,7 +44,7 @@ let superBanner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$800 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -67,7 +67,7 @@ let banner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$600 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -88,7 +88,7 @@ let banner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$500 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -152,7 +152,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                         </div>
                         <div className='details-flex-container'>
                             <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner5"></img>
-                            <div>{ban.costo.texto}</div>
+                            <div className='txt-mrg'>{ban.costo.texto}</div>
                         </div>
                         </div>
                     </Col>
@@ -201,7 +201,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                         </div>
                         <div className='details-flex-container'>
                             <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner10"></img>
-                            <div>{ban.costo.texto}</div>
+                            <div className='txt-mrg'>{ban.costo.texto}</div>
                         </div>
                         </div>
                     </Col>

@@ -42,8 +42,12 @@ const Calendario = ({numberOfMonths, getInitialState,setGetInitialState}) => {
         )}
       </p>
       <div className='flexi'>
-        <div className='circle'></div><p className='p-text'>Fechas NO disponibles</p>
+        <div className='circle'></div><p className='p-text'>Fechas NO disponibles</p> 
       </div>
+      <div className='flexi'>
+        <div className='blue-circle'></div><p className='p-text'>Fechas disponibles</p>
+      </div>
+      
       </div>
       <DayPicker
         className="Selectable"

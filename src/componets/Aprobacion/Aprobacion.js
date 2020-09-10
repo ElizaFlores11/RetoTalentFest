@@ -111,9 +111,9 @@ const Aprobacion = () =>{
                                     <li className='aprob-info'>Proveedor: {aprobacion.proveedor}</li>
                                     <li className='aprob-info'>Tipo de campaña: {aprobacion.tipo}</li>
                                     <li className='aprob-info'>Donde aparecerá: {aprobacion.departamento}</li>
-                                    <li className='aprob-info'>Fecha de inicio: 9/09/2020</li>
-                                    <li className='aprob-info'>Fecha de finalización: 17/09/2020</li>
-                                    <li className='aprob-info'>Costo:</li>
+                                    <li className='aprob-info'>Fecha de inicio: 14/09/2020</li>
+                                    <li className='aprob-info'>Fecha de finalización: 20/09/2020</li>
+                                    <li className='aprob-info'>Costo:$6,300.00</li>
                                 </ul>
                             </div> 
                         </div>               

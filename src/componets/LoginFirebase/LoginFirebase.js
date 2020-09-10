@@ -64,6 +64,7 @@ const LoginFirebase = (props) =>{
                 onClick={submit}
                 value="Entrar"
                 className="btnLogin"
+                style = {{fontFamily:'Roboto'}}
             />
     </Form>
     </Fragment>
