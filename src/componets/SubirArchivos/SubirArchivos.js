@@ -88,7 +88,7 @@ const SubirArchivos = () =>{
           onUploadSuccess={handleUploadSuccess}
           onProgress={handleProgress}
           multiple
-          style={{opacity:0}}
+          style={{opacity:0, width: 160, zIndex: 100,}}
           
         />
         </button> 
