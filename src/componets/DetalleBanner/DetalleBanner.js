@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {usestáte, useEffect} from 'react';
 import {firebase, db} from '../../firebase/configFirebase';  
 import { useHistory, Link } from 'react-router-dom'
 import { Row, Col, Layout} from 'antd';
@@ -15,7 +15,7 @@ let superBanner = [
             icon:'../assets/iconDescr.png'
         },
         ventaja:{
-            texto:'La ventaja de contratar esta campaña es que estarás visible en el momento que nuestros clientes ingresen a la página.',
+            texto:'La ventaja de contratar está campaña es que estárás visible en el momento que nuestros clientes ingresen a la página.',
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
@@ -23,7 +23,7 @@ let superBanner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$900.00 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -36,7 +36,7 @@ let superBanner = [
             icon:'../assets/iconDescr.png'
         },
         ventaja:{
-            texto:'La ventaja de contratar esta campaña es que cuando nuestro cliente de click sera diseccionado a una sección especial donde visualizara unicamente tus productos',
+            texto:'La ventaja de contratar está campaña es que cuando nuestro cliente de click sera diseccionado a una sección especial donde visualizara unicamente tus productos',
             icon:'../assets/iconVentajas.png'
         }, 
         ubicación:{
@@ -44,7 +44,7 @@ let superBanner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$800 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -67,7 +67,7 @@ let banner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$600 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -88,7 +88,7 @@ let banner = [
             icon:'../assets/iconUbi.png'
         },
         costo:{
-            texto:'$$$',
+            texto:'$500 x día',
             icon:'../assets/iconCosto.png'
         },
 
@@ -100,7 +100,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
     //const user = firebase.auth().currentUser;
     const  uid = 'q9R1VgxL0DfgfMY0KoKYhi3isw52'  
     //console.log(user); 
-      const [usuario, setUsuario] = useState([]);
+      const [usuario, setUsuario] = usestáte([]);
       useEffect(() => {
        const goUser = db.collection('users').where('uid', '==', uid );
        return goUser.onSnapshot(snapshotReady => {
@@ -152,7 +152,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                         </div>
                         <div className='details-flex-container'>
                             <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner5"></img>
-                            <div>{ban.costo.texto}</div>
+                            <div className='txt-mrg'>{ban.costo.texto}</div>
                         </div>
                         </div>
                     </Col>
@@ -201,7 +201,7 @@ const DetalleBanner = ({sBanner, ban}) =>{
                         </div>
                         <div className='details-flex-container'>
                             <img className='icon' src={ban.costo.icon} key={ban.id} alt="banner10"></img>
-                            <div>{ban.costo.texto}</div>
+                            <div className='txt-mrg'>{ban.costo.texto}</div>
                         </div>
                         </div>
                     </Col>

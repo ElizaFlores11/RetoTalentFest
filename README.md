@@ -1,7 +1,5 @@
 # Reto Walmart
 
-https://app.creately.com/diagram/aeW4OduisDJ/view
-
 ## Sobre el negocio
 
 Walmart de México y Centroamérica es una empresa dedicada al sector comercio. Opera en seis países: Costa Rica, El Salvador, Guatemala, Honduras, México y Nicaragua. Es una de las cadenas comerciales más importantes de la región, pues cuentan con mas de 3000 unidades laborando, incluyendo tiendas de autoservicio y clubes de precios con membresía.
@@ -50,6 +48,7 @@ Con el fin de mejorar la gestión y experiencia de usuarios, se pretende crear u
 
 <img src="imgReadme/diagrama.jpg" alt="Walmart">
 
+https://app.creately.com/diagram/aeW4OduisDJ/view
 
 
 ## Ideación
@@ -75,6 +74,8 @@ https://www.figma.com/file/fd8F5gbFM5YxUYfNjDTmU3/Walmart-con-Laboratoria?node-i
 
 https://publicidad-walmart.web.app/
 
+### Datos para entrar
+ Correo
 
 ## Herramientas utilizadas
 - Libreria React.

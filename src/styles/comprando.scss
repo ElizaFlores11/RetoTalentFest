@@ -146,9 +146,19 @@ $amarillo: #FDBB2F;
     height: 20px;
     margin: 5px 5px;
     border-radius: 50%;
-    background: grey;
+    background: rgb(218, 215, 215);
 }
 .flexi{
     display: flex;
     flex-direction: row;
+}
+.blue-circle{
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px;
+    border-radius: 50%;
+    background: #4896f0;
+}
+.txt-mrg{
+    margin: 10px 0 0 0;
 }

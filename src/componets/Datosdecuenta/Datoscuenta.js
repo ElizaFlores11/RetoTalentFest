@@ -9,14 +9,16 @@ const DatosCuenta = () =>{
         <div className='account-box'>  
           <div className='account-div-icon'>
             <img src={iconCu} className='icon-medium' id='iconCu'></img>
-            <h3>DATOS DE CUENTA</h3>
           </div>
-          <div className='container-input'>         
-              <Input style={{ width: '350px', border: '#017DC3' }} size="large" placeholder="Número de tarjeta" /> <br /> <br /> <br />               
-              <Input style={{ width: '350px', border: '#017DC3' }} size="large" placeholder="Vencimiento de tarjeta" /> <br /> <br /> <br /> 
-              <Input style={{ width: '350px', border: '#017DC3' }} size="large" placeholder="Vencimiento de tarjeta" /> <br /> <br /> <br />  
-              <Input style={{ width: '350px', border: '#017DC3' }} size="large" placeholder="Nombre del titular" /><br /> <br /> <br /> 
-          </div> 
+             <div className='container-input'>
+             <h2>Tu cobro será procesado con la <br/> siguiente cuenta de provedor</h2>
+              <h3> Juguetes Fisher </h3>
+              <p>
+                11444       Tarjetas de débito <br/>
+                Comcepto:   Campaña Walmart"  <br/>
+                Costo por:   $6, 300.00
+              </p>  
+          </div>
         </div>
     )
 }

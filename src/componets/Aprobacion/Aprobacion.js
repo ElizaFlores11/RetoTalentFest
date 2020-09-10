@@ -111,9 +111,9 @@ const Aprobacion = () =>{
                                     <li className='aprob-info'>Proveedor: {aprobacion.proveedor}</li>
                                     <li className='aprob-info'>Tipo de campaña: {aprobacion.tipo}</li>
                                     <li className='aprob-info'>Donde aparecerá: {aprobacion.departamento}</li>
-                                    <li className='aprob-info'>Fecha de inicio: 9/09/2020</li>
-                                    <li className='aprob-info'>Fecha de finalización: 17/09/2020</li>
-                                    <li className='aprob-info'>Costo:</li>
+                                    <li className='aprob-info'>Fecha de inicio: 14/09/2020</li>
+                                    <li className='aprob-info'>Fecha de finalización: 20/09/2020</li>
+                                    <li className='aprob-info'>Costo:$6,300.00</li>
                                 </ul>
                             </div> 
                         </div>               
@@ -171,7 +171,7 @@ const Aprobacion = () =>{
                         <div>
                         <p>Recuerda</p>
                         <ul>
-                            <li>Tu campaña esta siendo revisada por el equipo de diseño, para verificar que tus archivos sean los más optimos para tu campaña.</li>
+                            <li>Tu campaña está siendo revisada por el equipo de diseño, para verificar que tus archivos sean los más optimos para tu campaña.</li>
                             <li>En las proximas 24 horas recibiras una notificación donde se te indicara si tu campaña ha sido aprobada o reuiqere modificaciones.</li>
                             <li>Si existe algún cambio se te notificara los cambios necesarios y tendrías 24hras para realizarlos o quedara liberado el espacio y tendrás que iniciar el proceso de nuevo</li>
                         </ul>
